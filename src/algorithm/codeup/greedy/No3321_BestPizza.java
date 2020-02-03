@@ -19,38 +19,27 @@ public class No3321_BestPizza {
 		
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("토핑 종류 수를 입력하시오 : ");
 		while(true) {
 			n = sc.nextInt();
 			if(n>= 1 && n<= 100) break;
-			
-			System.out.print("입력할 수 없는 숫자입니다. 1부터 100사이의 값을 입력하시오 : ");
 		}
 
-		System.out.print("도우의 가격 및 토핑의 가격을 입력하시오(공백으로 구분) : ");
 		while(true) {
 			a = sc.nextInt();
 			b = sc.nextInt();
 			if((a>= 1 && a<= 1000) && (b>= 1 && b<= 1000)) break;
-			
-			System.out.print("입력할 수 없는 숫자입니다. 1부터 1000사이의 값을 입력하시오 : ");
 		}
 		
-		System.out.print("도우의 칼로리를 입력하시오 : ");
 		while(true) {
 			c = sc.nextInt();
 			if(c >=1 && c<= 10000) break;
-			
-			System.out.print("입력할 수 없는 숫자입니다. 1부터 10000사이의 값을 입력하시오 : ");
 		}
 		
 		d = new Integer[n];
 		for(int i=0; i<n; i++) {
-			System.out.print((i+1)+"번째 토핑의 칼로리를 입력하시오 : ");
 			while(true) {
 				d[i] = sc.nextInt();
 				if(d[i]>=1 && d[i]<=10000) break;
-				System.out.println("입력할 수 없는 숫자입니다. 1부터 10000사이의 값을 입력하시오 : ");
 			}
 		}
 		
