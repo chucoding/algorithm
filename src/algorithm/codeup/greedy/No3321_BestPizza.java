@@ -14,7 +14,8 @@ public class No3321_BestPizza {
 		int c = 0; //도우의 칼로리를 나타내는 정수
 		Integer d[] = null; //토핑 종류당 칼로리를 나타내는 배열
 		
-		double bestPizza = 0.0; // 최적해
+		double _bestPizza = 0.0; // 최적해
+		int bestPizza = 0;
 		
 		Scanner sc = new Scanner(System.in);
 
@@ -55,10 +56,6 @@ public class No3321_BestPizza {
 		
 		Arrays.sort(d, Collections.reverseOrder());
 		
-		for(int i=0; i<d.length; i++) {
-			System.out.print(d[i]+" ");
-		}
-		
 		for(int i=0; i<=d.length; i++) {
 
 			int sumKal = 0;
@@ -71,9 +68,10 @@ public class No3321_BestPizza {
 			}
 			
 			pizza = (c + sumKal) / ( a + (i*b));
-			if(bestPizza < pizza) bestPizza = pizza;
+			if(_bestPizza < pizza) _bestPizza = pizza;
 		}
 		
+		bestPizza = (int)Math.floor(_bestPizza);
 		System.out.println(bestPizza);
 	}
 }
