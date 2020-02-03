@@ -15,7 +15,7 @@ public class No3321_BestPizza {
 		Integer d[] = null; //토핑 종류당 칼로리를 나타내는 배열
 		
 		double _bestPizza = 0.0; // 최적해
-		int bestPizza = 0;
+		int bestPizza = 0; //최적해를 정수로
 		
 		Scanner sc = new Scanner(System.in);
 
@@ -45,15 +45,14 @@ public class No3321_BestPizza {
 		
 		Arrays.sort(d, Collections.reverseOrder());
 		
-		for(int i=0; i<=d.length; i++) {
+		_bestPizza = c / a;
+		for(int i=1; i<=d.length; i++) {
 
 			int sumKal = 0;
 			double pizza = 0.0;
 			
-			if(i != 0) {
-				for(int j=0; j<i; j++) {
-					sumKal += d[j];
-				}
+			for(int j=0; j<i; j++) {
+				sumKal += d[j];
 			}
 			
 			pizza = (c + sumKal) / ( a + (i*b));
