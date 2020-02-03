@@ -1,11 +1,11 @@
-package greedy;
+package algorithm.codeup.greedy;
 
 import java.util.Scanner;
 
-public class Change {
+public class No3301_Change {
 
 	public static void main(String[] args) {
-	
+		
 		int n, cnt = 0;
 		Scanner sc = new Scanner(System.in);
 		
