@@ -20,4 +20,4 @@ BFS
 DFS
 ---
 깊이 우선 탐색(그래프)
-<img src="/img/bfsdfs" width="450px" height="300px" title="bfsdfs" alt="bfsdfs"></img><br/>
+<img src="/img/bfsdfs.png" width="450px" height="300px" title="bfsdfs" alt="bfsdfs"></img><br/>
