@@ -9,6 +9,7 @@ greedy
 탐욕적 알고리즘 - 가장 가까이 있는 것의 최적해부터 구하는 방식
 
 
+
 그래프 -> 모든 정점을 방문하는 방법 두가지
 ==========================================
 
@@ -19,4 +20,4 @@ BFS
 DFS
 ---
 깊이 우선 탐색(그래프)
-![Alt text](/path/to/bfsdfs.png)
+<img src="/img/bfsdfs" width="450px" height="300px" title="bfsdfs" alt="bfsdfs"></img><br/>
