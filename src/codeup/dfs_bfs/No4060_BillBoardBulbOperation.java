@@ -1,4 +1,4 @@
-package algorithm.codeup.dfs_bfs;
+package codeup.dfs_bfs;
 
 import java.util.Scanner;
 

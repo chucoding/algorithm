@@ -1,4 +1,4 @@
-package algorithm.codeup.greedy;
+package codeup.greedy;
 
 import java.util.Arrays;
 import java.util.Collections;
