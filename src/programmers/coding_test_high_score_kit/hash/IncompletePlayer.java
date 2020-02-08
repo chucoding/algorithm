@@ -8,21 +8,19 @@ public class IncompletePlayer {
 	public static String solution(String[] participant, String[] completion) {
         String answer = "";
         
-        Map<Integer, String> map = new HashMap();
+        Map<String, Integer> map = new HashMap();
         
-        for(int i=0; i<participant.length; i++) {
-        	map.put(i,participant[i]);
+        //completion이 더 위에 있는 이유 : paricipant for문에서 한번에 처리가능(-1은 확실하게 완주 못했다는 것을 의미함)
+        for(String person : completion) {
+        	map.put(person, map.getOrDefault(person, 0) +1);
         }
         
-        for ( int key : map.keySet() ) {
-        	for(int i=0; i<completion.length; i++) {
-        		if(map.get(key).equals(completion[i])) {
-        			map.remove(key);
-        		}
-        	}
+        for(String person : participant) {
+        	map.put(person, map.getOrDefault(person, 0) -1);
+        
+        	if(map.get(person) < 0)
+        		return person;
         }
-
-        System.out.println(map);
         
         return answer;
     }
@@ -33,5 +31,6 @@ public class IncompletePlayer {
 		String[] completion = {"eden", "kiki"};
 		
 		String answer = solution(participant, completion);
+		System.out.println(answer);
 	}
 }
