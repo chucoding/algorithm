@@ -26,8 +26,8 @@ public class IncompletePlayer {
         return answer;
     }
 	
-	//이게 좀 더 효율적인 코드라고함
 	public static String solution2(String[] participant, String[] completion) {
+		
 		Arrays.sort(participant);
 		Arrays.sort(completion);
 		
@@ -44,20 +44,18 @@ public class IncompletePlayer {
 	
 	public static void main(String[] args) {
 		
+		long beforeTime = 0;
+		
 		String[] participant = {"leo", "kiki", "eden"};
 		String[] completion = {"eden", "kiki"};
 		
-		long beforeTime = System.currentTimeMillis(); 
+		beforeTime = System.nanoTime(); 
 		String answer = solution(participant, completion);
-		long afterTime = System.currentTimeMillis();
-		long diff = (afterTime - beforeTime);
-		System.out.println(diff);
+		System.out.println(System.nanoTime() - beforeTime);
 		
-		long beforeTime2 = System.currentTimeMillis(); 
+		beforeTime = System.nanoTime(); 
 		String answer2 = solution2(participant, completion);
-		long afterTime2 = System.currentTimeMillis();
-		long diff2 = (afterTime2 - beforeTime2);
-		System.out.println(diff2);
+		System.out.println(System.nanoTime() - beforeTime);
 	
 	}
 }
