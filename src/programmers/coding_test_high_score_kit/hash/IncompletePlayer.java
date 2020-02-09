@@ -1,5 +1,6 @@
 package programmers.coding_test_high_score_kit.hash;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,12 +26,38 @@ public class IncompletePlayer {
         return answer;
     }
 	
+	//이게 좀 더 효율적인 코드라고함
+	public static String solution2(String[] participant, String[] completion) {
+		Arrays.sort(participant);
+		Arrays.sort(completion);
+		
+		int i;
+		for(i=0; i<completion.length; i++) {
+			if(!participant[i].equals(completion[i])) { //정렬되므로 한사람은 무조건 없음!
+				return participant[i];
+			}
+		}
+		
+		return participant[i];
+	
+	}
+	
 	public static void main(String[] args) {
 		
 		String[] participant = {"leo", "kiki", "eden"};
 		String[] completion = {"eden", "kiki"};
 		
+		long beforeTime = System.currentTimeMillis(); 
 		String answer = solution(participant, completion);
-		System.out.println(answer);
+		long afterTime = System.currentTimeMillis();
+		long diff = (afterTime - beforeTime);
+		System.out.println(diff);
+		
+		long beforeTime2 = System.currentTimeMillis(); 
+		String answer2 = solution2(participant, completion);
+		long afterTime2 = System.currentTimeMillis();
+		long diff2 = (afterTime2 - beforeTime2);
+		System.out.println(diff2);
+	
 	}
 }

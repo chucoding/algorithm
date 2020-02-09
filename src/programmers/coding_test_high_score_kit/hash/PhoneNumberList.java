@@ -36,12 +36,12 @@ public class PhoneNumberList {
 		Solution3 solution3 = new Solution3();
 		Arrays.sort(phone_book);
 		
-		for(int i=0; i<phone_book.length; i++) {
-			if(!solution3.insert(phone_book[i])) {
-				answer = false;
-				break;
-			}
-		}
+//		for(int i=0; i<phone_book.length; i++) {
+//			if(!solution3.insert(phone_book[i])) {
+//				answer = false;
+//				break;
+//			}
+//		}
 		return answer;
     }
 	
