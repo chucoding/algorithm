@@ -12,11 +12,11 @@ public class GymSuit {
         }
         
         for(int i=0; i<reserve.length; i++) {
-        	student[reserve[i]-1] = 2;
+        	student[reserve[i]-1] += 1;
         }
         
         for(int i=0; i<lost.length; i++) {
-        	student[lost[i]-1] = 0;
+        	student[lost[i]-1] -= 1;
         }
 
         for(int i=0; i<n; i++) {
@@ -37,7 +37,6 @@ public class GymSuit {
         				student[i-1]--;
         			} 
         		}
-        		
         	}
         }
         
