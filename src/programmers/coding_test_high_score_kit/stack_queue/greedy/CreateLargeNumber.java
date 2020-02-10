@@ -8,30 +8,21 @@ public class CreateLargeNumber {
     public static String solution(String number, int k) {
 
     	String answer = "";
-    	List list = new ArrayList();
-    	
-    	for(int i=0; i<number.length(); i++) {
-    		list.add(number.charAt(i));
-    	}
-    	
-    	System.out.println(list);
-//    	StringBuffer _answer = new StringBuffer(number);
+    	StringBuffer sb = new StringBuffer(number);
     	
     	for(int i=1; i<10; i++) {
+    		
     		for(int j=0; j<number.length()-1; j++) {
     			
     			if(i == number.charAt(j)-48) {
-    				list.remove(j);
+    				sb.deleteCharAt(j);
     				k--;
-    			} else {
-    				continue;
     			}
     			
     			if(k == 0) break; 
     		}
         }
     
-    	answer = list.toString();
     	return answer;
 	}
     
