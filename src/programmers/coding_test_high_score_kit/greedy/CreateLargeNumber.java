@@ -1,7 +1,4 @@
-package programmers.coding_test_high_score_kit.stack_queue.greedy;
-
-import java.util.ArrayList;
-import java.util.List;
+package programmers.coding_test_high_score_kit.greedy;
 
 public class CreateLargeNumber {
 
@@ -9,20 +6,28 @@ public class CreateLargeNumber {
 
     	String answer = "";
     	StringBuffer sb = new StringBuffer(number);
-    	
+
+    	int t=1;
     	for(int i=1; i<10; i++) {
-    		
-    		for(int j=0; j<number.length()-1; j++) {
-    			
-    			if(i == number.charAt(j)-48) {
+
+    		if(k == 0) break;
+    		int j=0;
+    		while(j<sb.length()-1) {
+    			if(k == 0) break; 
+    			if(i == sb.charAt(j)-48) {
+    				System.out.println(sb);
     				sb.deleteCharAt(j);
     				k--;
+    				t++;
+    				continue;
     			}
-    			
-    			if(k == 0) break; 
+    			j++;
     		}
+    		
         }
-    
+
+    	System.out.println(sb);
+    	answer = sb.toString();
     	return answer;
 	}
     
@@ -30,5 +35,7 @@ public class CreateLargeNumber {
 
 		solution("1924", 2);
 		solution("1231234", 3);
+		solution("4177252841",4);
 	}
 }
+

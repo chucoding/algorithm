@@ -1,4 +1,4 @@
-package programmers.coding_test_high_score_kit.stack_queue.greedy;
+package programmers.coding_test_high_score_kit.greedy;
 
 public class Joystick {
 
