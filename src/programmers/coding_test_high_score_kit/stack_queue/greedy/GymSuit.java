@@ -25,17 +25,15 @@ public class GymSuit {
         		if(i == 0 && student[i+1] == 2) {
         			student[i]++;
             		student[i+1]--;
+        		} else if(i != 0 && i != n-1 && student[i-1] == 2) {
+        			student[i]++;
+        			student[i-1]--;
+        		} else if(i != n-1 && i != 0 && student[i+1] == 2) {
+        			student[i]++;
+        			student[i+1]--;
         		} else if(i == n-1 && student[i-1] == 2) {
         			student[i]++;
             		student[i-1]--;
-        		} else {
-        			if(i != 0 && student[i-1] == 2) {
-        				student[i]++;
-        				student[i-1]--;
-        			} else if(i != n-1 && student[i+1] == 2) {
-        				student[i]++;
-        				student[i-1]--;
-        			} 
         		}
         	}
         }
@@ -44,16 +42,15 @@ public class GymSuit {
         	if(student[i] > 0) answer++;
         }
         
-        System.out.println(answer);
-        
         return answer;
     }
 	
 	public static void main(String[] args) {
 		
-		solution(5, new int[]{2, 4}, new int[]{1, 3, 5});
-		solution(5, new int[]{2, 4}, new int[]{3});
-		solution(10, new int[]{1,3,4,5}, new int[]{2,9});
-		
+//		solution(5, new int[]{2, 4}, new int[]{1, 3, 5});
+//		solution(5, new int[]{2, 4}, new int[]{3});
+//		solution(10, new int[]{1,3,4,5}, new int[]{2,9});
+//		solution(6, new int[]{2,4}, new int[]{1,3,6});
+		solution(6, new int[]{1,3,4,6}, new int[]{2,5});
 	}
 }
