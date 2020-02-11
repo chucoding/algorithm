@@ -40,7 +40,7 @@ public class LifeBoat {
 			dfs(arr, i, + 1, right);
 		}
 
-		return dfs(arr, i, + 1, right);
+		return dfs(arr, i, 1, right);
 	}
 	
 	public static void main(String[] args) {
