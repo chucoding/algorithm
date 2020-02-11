@@ -4,6 +4,12 @@ public class Joystick {
 
 	public static int solution(String name) {
 		int answer = 0;
+		
+		for(int i=0; i<name.length(); i++) {
+			
+		}
+		
+		
 		return answer;
 	}
 	
