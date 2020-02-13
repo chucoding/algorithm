@@ -4,27 +4,35 @@ public class Level2_1 {
 
 	public static long solution(int w,int h) {
 		long answer = 1;
-		int tmp = 0;
 		
-		int _h = h;
-		int _w = w;
+		int max = 0;
+		int small = 0;
+		int dap = 0;
 		
-		//최대공약수 풀기
-		while(_w !=0 ) {
-			if(_w < _h) {
-				tmp = _w;
-				_w = _h;
-				_h = tmp;
-			}
-			_w = _w-_h;
+		if(w > h) {
+			max = w;
+			small = h;
+		}
+		else {
+			max = h;
+			small = w;
 		}
 		
-		int a = h / _h;
-		int b = w / _h;
-		
-		int solv = a + b - 1;
-
-		answer = w * h - (solv * _h);
+		while(true) {
+			if(max % small == 0) {
+				dap = max/small;
+				break;
+			}
+			
+			int tmp = max;
+			tmp = max % small;
+			
+			max = small;
+			small = tmp;
+			
+			System.out.println(max);
+			System.out.println(small);
+		}
 		
 		return answer;
 	}
