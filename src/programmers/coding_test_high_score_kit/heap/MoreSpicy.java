@@ -15,6 +15,7 @@ public class MoreSpicy {
 		
 		while(heap.peek() <= K) {
 			
+			//무한반복 회피(K보다 작은것만 있음)
 			if(heap.size() == 1) {
 				return -1;
 			}
