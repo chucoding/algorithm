@@ -5,7 +5,7 @@ public class StringCompression {
     public static int solution(String s) {
         int answer = 0;
         int i = s.length()/2;
-        
+ 
         StringBuilder sb = new StringBuilder(s);
         
 //        while(i>-1) {
