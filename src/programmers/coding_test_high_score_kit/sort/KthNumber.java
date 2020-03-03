@@ -2,7 +2,7 @@ package programmers.coding_test_high_score_kit.sort;
 
 import java.util.Arrays;
 
-public class Solution {
+public class KthNumber {
 
 	public static int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];

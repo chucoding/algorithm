@@ -15,7 +15,7 @@ public class RamenFactory2 {
 			dq.add(dates[i]);
 			sq.add(supplies[i]);
 		}
-	
+
 		while(k > stock) {
 	
 			int max_supplies = 0;
