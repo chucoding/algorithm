@@ -2,6 +2,8 @@ package programmers.coding_test_high_score_kit.sort;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class TheLargestNumber {
 
@@ -34,9 +36,51 @@ public class TheLargestNumber {
 		 return answer;
     }
 	
+	public static String solution2(int[] numbers) {
+		
+		String answer = "";
+	
+		int max = 0;
+		for(int i=0; i<numbers.length; i++) {
+			if(max < numbers[i])
+				max = numbers[i];
+		}
+
+		//자리수 찾기
+		int length = (int)(Math.log10(max)+1);
+		int[][] arr = new int[numbers.length][length];
+			 
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<length; j++) {
+				if(numbers[i] > 0) {
+					arr[i][length-j-1] = numbers[i] % 10;
+					numbers[i] /= 10;
+					continue;
+				}
+				arr[i][length-j-1] = -1;
+			}
+		}
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<length; j++) {
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+		return answer;
+	}
+	
+	public static String solution3(int[] numbers) {
+		String answer = "";
+		Queue queue = new LinkedList();
+		
+		return answer;
+	}
+	
 	public static void main(String[] args) {
 		
 		int[] numbers = {6, 10, 2};
-		String sol = solution(numbers);
+		String sol = solution2(numbers);
 	}
 }

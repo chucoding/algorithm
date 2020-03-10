@@ -31,7 +31,7 @@ public class KthNumber {
 
 		return answer;
 	}
-	
+
 	public static void main(String[] args) {
 		
 		int[] arr = {1, 5, 2, 6, 3, 7, 4};
