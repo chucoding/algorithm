@@ -22,7 +22,7 @@ public class No3120_RemoteController {
 			else if(sum >= 3 && sum <= 7) sum -= 5;
 			else if(sum < 3 && sum > 0) sum -= 1;
 			
-			if(sum < 0) sum = Math.abs(sum);
+			if(sum < 0) sum = Math.abs(sum); //무한반복 탈출! (-로 넘어가는 예외 막아줌)
 			cnt++;
 		}
 		
