@@ -14,7 +14,7 @@ public class Joystick {
 			right[0] = name.charAt(0) - 65;
 		} else {
 			left[0] = 91 - name.charAt(0);
-			right[0] = name.charAt(0) - 65;
+			right[0] = 91 - name.charAt(0);
 		}
 		
 		for(int i=1; i<name.length(); i++) {
