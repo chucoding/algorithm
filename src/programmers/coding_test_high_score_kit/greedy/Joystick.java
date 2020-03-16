@@ -8,8 +8,14 @@ public class Joystick {
 		int[] left = new int[name.length()];
 		int[] right = new int[name.length()];
 		
-		left[0] = name.charAt(0) - 65;
-		right[0] = name.charAt(0) - 65;
+		//처음에도 고려해줘야됨(무조건 위로만 간다는 생각 X) - 처음일때는 무조건 수행이니 아래 for문과 구분해줌
+		if((name.charAt(0) - 65) <= (91 - name.charAt(0))) {
+			left[0] = name.charAt(0) - 65;
+			right[0] = name.charAt(0) - 65;
+		} else {
+			left[0] = 91 - name.charAt(0);
+			right[0] = name.charAt(0) - 65;
+		}
 		
 		for(int i=1; i<name.length(); i++) {
 			if((name.charAt(i) - 65) <= (91 - name.charAt(i))) left[i] = name.charAt(i) - 65;
@@ -17,7 +23,6 @@ public class Joystick {
 			
 			if((name.charAt(name.length()-i) - 65) <= (91 - name.charAt(name.length()-i))) right[i] = name.charAt(name.length()-i) - 65;
 			else right[i] = 91 - name.charAt(name.length()-i);
-		
 		}
 
 		int l_cnt = 0;
@@ -60,7 +65,7 @@ public class Joystick {
 		int sol = solution("JAZ");
 		int sol2 = solution("JEROEN");
 		int sol3 = solution("JAN");
+		int sol4 = solution("ZZZ");
+		int sol5 = solution("ZAZ");
 	}
-	
-	
 }
