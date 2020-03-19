@@ -18,7 +18,9 @@ public class No4763_MonKey {
 		try {
 			fis = new  FileInputStream(file);
 
-			while((in = fis.read()) != -1) sb.append((char)in);
+			while((in = fis.read()) != -1) {
+				sb.append((char)in);
+			}
 		
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -32,6 +34,6 @@ public class No4763_MonKey {
 			}
 		}
 		
-		System.out.println(sb);
+		System.out.println(sb.charAt(0));
 	}
 }
