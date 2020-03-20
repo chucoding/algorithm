@@ -15,7 +15,6 @@ public class Print1ToN {
 
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		
 		recursion(1, n);
 	}
 	
