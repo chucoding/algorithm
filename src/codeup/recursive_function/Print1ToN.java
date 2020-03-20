@@ -17,5 +17,4 @@ public class Print1ToN {
 		int n = sc.nextInt();
 		recursion(1, n);
 	}
-	
 }
