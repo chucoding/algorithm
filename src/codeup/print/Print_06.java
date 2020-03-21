@@ -1,4 +1,4 @@
-package codeup.basic_100;
+package codeup.print;
 
 public class Print_06 {
 

@@ -1,4 +1,4 @@
-package codeup.basic_100;
+package programmers.coding_test_high_score_kit.dynamic;
 
 public class IntegerTriangle {
 
