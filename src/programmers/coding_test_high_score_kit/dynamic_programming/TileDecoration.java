@@ -1,4 +1,4 @@
-package programmers.coding_test_high_score_kit.dynamic;
+package programmers.coding_test_high_score_kit.dynamic_programming;
 
 public class TileDecoration {
 
