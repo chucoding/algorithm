@@ -6,6 +6,7 @@ public class KsquaredOfN {
 
 	private static Scanner sc = new Scanner(System.in);
 	// private static int n = 0;
+	
 	/*
 	public static void main(String[] args) {
 		n = sc.nextInt();
@@ -40,7 +41,6 @@ public class KsquaredOfN {
 //		System.out.println(b);
 //		return power(a,b, c-1);
 //	}
-	
 	
 	public static void main(String[] args) {
 		long a=sc.nextInt();
