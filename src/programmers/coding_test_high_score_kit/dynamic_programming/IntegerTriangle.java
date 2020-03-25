@@ -9,25 +9,29 @@ public class IntegerTriangle {
 		int answer = 0;
 		triangles = triangle;
 		
-		answer = recursion(triangle.length-1, 0, 0);
+		answer = recursion(triangle.length-1, 0);
+		System.out.println(answer);
 		
 		return answer;
 	}
 	
-	public static int recursion(int i, int j, int answer) {
+	public static int recursion(int i, int j) {
 
 		//탈출조건
-		if(i == 0) return answer += triangles[i][j];
+		if(i == 0) return triangles[i][j];
 		
-		if(j == triangles[i].length-1) j = 0;
-		else {
-			if(triangles[i][j] > triangles[i][j+1]) answer += triangles[i][j];
-			else answer += triangles[i][j+1];
-			
-			return recursion(i-1, j, answer);
+		if(triangles[i][j] > triangles[i][j+1]) triangles[i-1][j] += triangles[i][j];
+		else triangles[i-1][j] += triangles[i][j+1];
+		
+		j+=1;
+		
+		if(j+1 > triangles[i].length-1) {
+			i -= 1;
+			j = 0;
 		}
 		
-		return 1;
+		return recursion(i, j);
+		
 	}
 
 	public static void main(String[] args) {
