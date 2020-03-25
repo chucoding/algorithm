@@ -8,10 +8,10 @@ public class IntegerTriangle {
 	
 		int answer = 0;
 		int i = triangle.length;
-		int j = triangle[0].length;
+		int j = triangle[triangle.length-1].length;
 
 		triangles = triangle;
-		
+
 		answer = recursion(i, j, answer);
 		return answer;
 	}
