@@ -1,4 +1,4 @@
-package coupang;
+package test.coupang;
 
 import java.util.Arrays;
 import java.util.Collections;
