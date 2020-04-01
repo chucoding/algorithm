@@ -22,7 +22,14 @@ public class Network {
 		x = find(x);
 		y = find(y);
 		
-		if(x!=y) parent[y] = x;
+		if(x!=y) {
+			
+			for(int i=0; i<parent.length; i++) {
+				if(parent[i] == y) {
+					parent[i] = x;
+				}
+			}
+		}
 	}
 	
     public static int solution(int n, int[][] computers) {
@@ -36,18 +43,15 @@ public class Network {
         
         for(int i=0; i<n; i++) {
         	for(int j=i+1; j<n; j++) {
-        		if(computers[i][j] == 1) {
-        			System.out.println(i +", "+j);
-        			union(i,j);
         		
+        		if(computers[i][j] == 1) {
+        			union(i,j);
         		}
         	}
         }
         
         Set set = new HashSet();
         for(int i=0; i<n; i++) {
-        	
-        	System.out.println(parent[i]);
         	set.add(parent[i]);
         }
 
