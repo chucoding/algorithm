@@ -1,49 +1,63 @@
 package programmers.coding_test_high_score_kit.dfs_bfs;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Network {
 
-	private static int[][] _computers;
-	private static int[][] visited;
-	
-    public static void dfs(int i, int j) {
+	private static int[] parent;
 
-    	if(i < 0 || j < 0 || i > visited.length-1 || j > visited.length-1 || visited[i][j] == 1 || _computers[i][j] == 0) return;
-    	
-    	visited[i][j] = 1;	
-    		
-    	dfs(i-1, j);
-    	dfs(i, j-1);
-    	dfs(i+1, j);
-    	dfs(i, j+1);
-    }
+	public static int find(int x) {
+		if(x == parent[x]) {
+			return x;
+		} else {
+			int y = find(parent[x]);
+			parent[x] = y;
+			return y;
+		}
+	}
+	
+	public static void union(int x, int y) {
+		
+		x = find(x);
+		y = find(y);
+		
+		if(x!=y) parent[y] = x;
+	}
 	
     public static int solution(int n, int[][] computers) {
-        int answer = 0;
-        
-        _computers = computers;
-        visited = new int[n][n];
+
+    	int answer = 0;
+        parent = new int[n];
 
         for(int i=0; i<n; i++) {
-        	for(int j=0; j<n; j++) {
-        		visited[i][j] = 0;
-        	}
+        	parent[i] = i;
         }
         
         for(int i=0; i<n; i++) {
-        	for(int j=0; j<n; j++) {
-        		if(visited[i][j] == 0 && computers[i][j] == 1) {
-        			dfs(i,j);
-        			answer++;
+        	for(int j=i+1; j<n; j++) {
+        		if(computers[i][j] == 1) {
+        			System.out.println(i +", "+j);
+        			union(i,j);
+        		
         		}
         	}
         }
         
+        Set set = new HashSet();
+        for(int i=0; i<n; i++) {
+        	
+        	System.out.println(parent[i]);
+        	set.add(parent[i]);
+        }
+
+        answer = set.size();
         return answer;
     }
     
     public static void main(String[] args) {
-		solution(3, new int[][]{{1,1,0},{1,1,0},{0,0,1}});
-		solution(4, new int[][]{{1,1,0,0},{1,1,0,0},{0,0,1,0},{0,0,0,1}});
+//		solution(3, new int[][]{{1,1,0},{1,1,0},{0,0,1}});
+//		solution(4, new int[][]{{1,1,0,0},{1,1,0,0},{0,0,1,0},{0,0,0,1}});
 		solution(4, new int[][]{{1,0,0,1},{0,1,1,1},{0,1,1,0},{1,1,0,1}});
 	}
 }
