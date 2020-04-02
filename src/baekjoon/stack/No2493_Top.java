@@ -3,7 +3,8 @@ package baekjoon.stack;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
 public class No2493_Top {
@@ -18,8 +19,8 @@ public class No2493_Top {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 	
 		int[] answer = new int[n]; 
-		int[] heights = new int[n]; 
-		Stack<Integer> stack = new Stack<Integer>();
+		int[] heights = new int[n];
+		Deque<Integer> stack = new ArrayDeque<Integer>();
 
 		for(int i=0; i<n; i++) {
 			heights[i] = Integer.parseInt(st.nextToken());
