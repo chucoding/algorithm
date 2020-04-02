@@ -8,6 +8,7 @@ public class No2493_Top {
 	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
+		
 		int n = sc.nextInt();
 		int arr[] = new int[n];
 		int answer[] = new int[n];
@@ -21,7 +22,6 @@ public class No2493_Top {
 		for(int i=n-1; i>=0; i--) {
 
 			if(i == 0) break;
-			
 			top.push(i);
 			
 			if(arr[i-1] >= arr[i]) answer[i] = top.pop();
@@ -30,6 +30,5 @@ public class No2493_Top {
 		for(int i=0; i<n; i++) {
 			System.out.print(answer[i]+" ");
 		}
-		
 	}
 }

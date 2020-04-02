@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class No1402_PrintingBackwards3 {
+public class No1402_PrintBackwards3 {
 
 	public static void main(String[] args) throws IOException {
 		
