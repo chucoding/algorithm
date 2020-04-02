@@ -21,6 +21,22 @@ string
       * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
    2. Scanner 객체사용
       * Scanner sc = new Scanner(System.in);
+* 특정 문자열에서 원하는 문자가 포함되어 있는지
+  1. contains : 문자열에 검색하고자 하는 문자가 있는지 확인 (boolean)
+  2. **indexOf** : 문자열에서 검색하는 문자의 위치를 반환 (int:문자위치)
+  3. matches : 정규식을 이용하여 문자열을 검색 (boolean)
+    * 특정 문자열을 검색할때 사용하기 보다는 한글, 숫자 등과 같이 해당 형태의 텍스트가 존재하는지 확인할때 사용하면 좋다
+  출처: https://fruitdev.tistory.com/72 [과일가게 개발자]
+* 특정 문자열에서 특정 문자 개수 구하기
+  ```
+    int lineCnt = 0;
+    int fromIndex = -1;
+    while ((fromIndex = cellText.indexOf("\n", fromIndex + 1)) >= 0) {
+      lineCnt++;
+    }
+  ```
+  출처: https://goni9071.tistory.com/6 [고니의꿈]
+
 
 hash
 -----
