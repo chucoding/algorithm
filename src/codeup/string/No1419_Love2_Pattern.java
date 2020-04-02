@@ -10,6 +10,8 @@ public class No1419_Love2_Pattern {
 
 	public static void main(String[] args) {
 		
+		long a = System.nanoTime();
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String s = br.readLine();
@@ -26,6 +28,8 @@ public class No1419_Love2_Pattern {
 			e.printStackTrace();
 		}
 		
+		long b = System.nanoTime();
+		System.out.println(b-a);
 		
 	}
 }
