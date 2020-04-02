@@ -54,10 +54,10 @@ string
     * 반복문을 사용하면 두번째, 세번째로 패턴과 일치하는 부분을 찾음
   ```
     Pattern pattern = Pattern.compile("정규식");            
-			Matcher matcher = pattern.matcher("문자열");
-			while (matcher.find()) {
-				count++;
-			}
+    Matcher matcher = pattern.matcher("문자열");
+    while (matcher.find()) {
+	count++;
+    }
   ```
   출처: https://devgwangpal.tistory.com/12 [흔한 코더의 필기장입니다 :)]
 
