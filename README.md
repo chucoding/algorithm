@@ -2,7 +2,7 @@
 알고리즘 유의사항!
 
 1. !!문제를 손으로 풀기전까진 키보드 손대지 말기!! (= 완성된 글이 아닌 것을 번역하는 것)
-2. 주석을 최대한 활용(이 변수가 무엇인지 다시 확인하면 시간 오래걸림)
+2. **주석을 최대한 활용**(이 변수가 무엇인지 다시 확인하면 시간 오래걸림)
 3. for문 안에서만 사용할 경우 전역변수 보다는 지역변수로 선언해야 메모리 낭비가 없음!
 4. Iterator 함부로 쓰지말기!(Collection에 저장되어 있는 요소들을 읽어오는 방법중의 하나 but, 객체를 만들어 사용하기 때문에 느림)
    * 자동으로 인덱스 관리 해주기 때문에 사용하는데 편리할 수는 있음! 
@@ -14,7 +14,12 @@ print
 
 string
 -----
-자바 문자 출력은 Scanner 메소드가 따로 없음! next().charAt(0) 이런식으로 출력 가능
+* 자바 문자 출력은 Scanner 메소드가 따로 없음! next().charAt(0) 이런식으로 출력 가능
+* 자바의 문자 출력(표준입력이란 System.in을 사용하는 것.. 다음과 같은 두가지 방식 중 골라 )
+   1. BufferedReader 객체사용
+      * BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+   2. Scanner 객체사용
+      * Scanner sc = new Scanner(System.in);
 
 hash
 -----
