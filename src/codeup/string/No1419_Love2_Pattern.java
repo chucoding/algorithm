@@ -3,25 +3,29 @@ package codeup.string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class No1419_Love2 {
+public class No1419_Love2_Pattern {
 
 	public static void main(String[] args) {
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String s = br.readLine();
+			int count = 0;
 
-			int lineCnt = 0;
-			int fromIndex = -1;
-			while((fromIndex = s.indexOf("love", fromIndex+1)) >=0) {
-				lineCnt++;
+			Pattern pattern = Pattern.compile("love");            
+			Matcher matcher = pattern.matcher(s);
+			while (matcher.find()) {
+				count++;
 			}
-			
-			System.out.println(lineCnt);
+			System.out.println(count);
 		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		
 	}
 }
