@@ -23,6 +23,7 @@ public class Joystick {
 			
 			if((name.charAt(name.length()-i) - 65) <= (91 - name.charAt(name.length()-i))) right[i] = name.charAt(name.length()-i) - 65;
 			else right[i] = 91 - name.charAt(name.length()-i);
+		
 		}
 
 		int l_cnt = 0;
@@ -62,10 +63,12 @@ public class Joystick {
 	}
 	
 	public static void main(String[] args) {
-		int sol = solution("JAZ");
-		int sol2 = solution("JEROEN");
-		int sol3 = solution("JAN");
-		int sol4 = solution("ZZZ");
-		int sol5 = solution("ZAZ");
+//		int sol = solution("JAZ");
+//		int sol2 = solution("JEROEN");
+//		int sol3 = solution("JAN");
+//		int sol4 = solution("ZZZ");
+//		int sol5 = solution("ZAZ");
+		int sol6 = solution("ABABAAAAAAABA");
+		int sol7 = solution("ABAAAAAAABA");
 	}
 }
