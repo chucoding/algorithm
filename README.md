@@ -16,8 +16,9 @@ string
 -----
 * 자바 문자 출력은 Scanner 메소드가 따로 없음! next().charAt(0) 이런식으로 출력 가능
 * 자바의 문자 출력(표준입력이란 System.in을 사용하는 것.. 다음과 같은 두가지 방식 중 골라 )
-   1. BufferedReader 객체사용
+   1. **BufferedReader** 객체사용 -- 성능은 이게 떠 빠름!
       * BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+      * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
    2. Scanner 객체사용
       * Scanner sc = new Scanner(System.in);
 
