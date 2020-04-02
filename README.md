@@ -19,6 +19,17 @@ string
    1. **BufferedReader** 객체사용 -- 성능은 이게 떠 빠름!
       * BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
       * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
+      * **StringTokenizer**
+      	* 공백이 있다면 뒤에 문자열이 공백 자리를 땡겨 채우도록 한다.
+	* BufferedReader보다 빠르게 사용될 수 있다.
+	* 문자열을 자르게 위해 split을 사용할땐, split은 정규식을 기반으로 자르는 로직으로서 내부는 복잡하다. 그에 비해 StringTokenizer의 nextToken()메소드는 단순히 공백 자리를 땡겨 채우는 것이다. 그렇기 때문에 속도 차이가 날 수 밖에 없다.
+	* 정규식이나 인덱스 접근과 같은 처리가 필요없다면 StringTokenizer를 사용하는 것이 효율적이다.
+	```
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int i=0; i<n; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+	```
    2. Scanner 객체사용
       * Scanner sc = new Scanner(System.in);
 * 특정 문자열에서 원하는 문자가 포함되어 있는지
