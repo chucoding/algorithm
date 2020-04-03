@@ -7,12 +7,23 @@ import java.io.InputStreamReader;
 public class No1418_FindT {
 
 	public static void main(String[] args) throws IOException {
+		
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		sb.append(br.readLine());
+		String s = br.readLine();
 
-		for(int i=0; i<sb.length(); i++) {
-			if(sb.charAt(i) == 't') System.out.print((i+1)+" ");
+//		for(int i=0; i<s.length(); i++) {
+//			if(s.charAt(i) == 't') System.out.print((i+1)+" ");
+//		}
+		
+//		long a = System.nanoTime();
+		
+		int index = -1;
+		while((index = s.indexOf('t', index+1)) >= 0) {
+			System.out.print((index+1)+" ");
 		}
+//		
+//		long b = System.nanoTime();
+//		System.out.println(b-a);
 	}
 }
