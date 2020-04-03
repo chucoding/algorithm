@@ -20,12 +20,12 @@ string
    	```
       		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
         ```
-      * 버퍼크기 8192chars(**큰 파일을 읽을 때 좋음**)
-      * 문자열을 단순히 읽고 저장
-      * 동기화 가능
-      * IOException 처리를 던짐
-      * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
-      * **StringTokenizer**
+     * 버퍼크기 8192chars(**큰 파일을 읽을 때 좋음**)
+     * 문자열을 단순히 읽고 저장
+     * 동기화 가능
+     * IOException 처리를 던짐
+     * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
+     * **StringTokenizer**
       	* 공백이 있다면 뒤에 문자열이 공백 자리를 땡겨 채우도록 한다.
 	* BufferedReader보다 빠르게 사용될 수 있다.
 	* 문자열을 자르게 위해 split을 사용할땐, split은 정규식을 기반으로 자르는 로직으로서 내부는 복잡하다. 그에 비해 StringTokenizer의 nextToken()메소드는 단순히 공백 자리를 땡겨 채우는 것이다. 그렇기 때문에 속도 차이가 날 수 밖에 없다.
