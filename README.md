@@ -101,6 +101,13 @@ string
   ```
   출처: https://devgwangpal.tistory.com/12 [흔한 코더의 필기장입니다 :)]
 
+* 대문자 <-> 소문자 변환문제
+```
+	char[] str = br.readLine().toCharArray();
+```
+	* 다음과 같은 공식으로 배열 만들어서 사용(하나씩 비교해줘야 되므로 StringBuilder X)
+	* 다 끝난다음 출력시 for문 대신 **String.valueOf(str)**로 String형으로 변환시켜주면 더 빠르게 동작한다.
+
 hash
 -----
 해쉬 - 해쉬를 이용하면 즉시 저장하거나 찾고자 하는 위치를 참조할 수 있으므로 더욱 빠른 속도로 처리할 수 있다.
