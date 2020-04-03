@@ -16,10 +16,16 @@ string
 -----
 * 자바 **문자(char)** 출력은 Scanner 메소드가 따로 없음! next().charAt(0) 이런식으로 출력 가능
 * 자바의 문자 출력(표준입력이란 System.in을 사용하는 것.. 다음과 같은 두가지 방식 중 골라 )
-   1. **BufferedReader** 객체사용 -- 성능은 이게 떠 빠름!
-      * BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
-      * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
-      * **StringTokenizer**
+   1. **BufferedReader** 객체사용
+   ```
+      	BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+   ```
+   * 버퍼크기 8192chars(**큰 파일을 읽을 때 좋음**)
+   * 문자열을 단순히 읽고 저장
+   * 동기화 가능
+   * IOException 처리를 던짐
+   * 숫자 + 개행은 readLine()으로 받고 Integer.parse()해줘야됨 주의!
+   * **StringTokenizer**
       	* 공백이 있다면 뒤에 문자열이 공백 자리를 땡겨 채우도록 한다.
 	* BufferedReader보다 빠르게 사용될 수 있다.
 	* 문자열을 자르게 위해 split을 사용할땐, split은 정규식을 기반으로 자르는 로직으로서 내부는 복잡하다. 그에 비해 StringTokenizer의 nextToken()메소드는 단순히 공백 자리를 땡겨 채우는 것이다. 그렇기 때문에 속도 차이가 날 수 밖에 없다.
@@ -30,8 +36,19 @@ string
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 	```
-      2. Scanner 객체사용
-         * Scanner sc = new Scanner(System.in);
+	
+   2. Scanner 객체사용(버퍼크기 1024chars)
+	```
+      		Scanner sc = new Scanner(System.in);
+	```
+	* 버퍼크기 1024chars
+	* 문자열을 구분하여 분석가능
+	* 동기화가 되지 않는다.
+	* IOException을 숨긴다.
+	* 편리한 기능이 많지만 속도가 느리기때문에 **알고리즘에서 사용하지 않음!**
+		* 속도저하 원인 : 정규식의 남용(자동파싱) ex) Scanner.nextInt() -> 1,234,567 을 1234567로 인정함
+		* nextInt 보다 bufferedReader의 **Integer.parseInt(nextLine)이 더 빠름**
+	 
 * String vs StringBuffer, StringBuilder
 	* String : immutable(불변)
 		```
