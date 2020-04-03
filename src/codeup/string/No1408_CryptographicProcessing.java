@@ -17,14 +17,20 @@ public class No1408_CryptographicProcessing {
 			b[i] = (char) ((str[i] * 7) % 80 + 48);
 		}
 		
-		long x = System.nanoTime();
+//		long x = System.nanoTime();
+//		for(int i=0; i<a.length; i++) {
+//			System.out.print(a[i]);
+//			System.out.print(b[i]);
+//		}
+//		
 		String.valueOf(a);
 		String.valueOf(b);
 		
 		System.out.println(a);
 		System.out.println(b);
-		long y = System.nanoTime();
+		
+//		long y = System.nanoTime();
 
-		System.out.println(y-x);
+//		System.out.println(y-x);
 	}
 }
