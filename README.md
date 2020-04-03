@@ -106,7 +106,7 @@ string
 		char[] str = br.readLine().toCharArray();
 	```
 	* 다음과 같은 공식으로 배열 만들어서 사용(하나씩 비교해줘야 되므로 StringBuilder X)
-	* 다 끝난다음 출력시 for문 대신 **String.valueOf(str)**로 String형으로 변환시켜주면 더 빠르게 동작한다.
+	* 다 끝난다음 출력시 for문 대신 **String.valueOf(str)** 로 String형으로 변환시켜주면 더 빠르게 동작한다.
 
 hash
 -----
