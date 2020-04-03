@@ -20,6 +20,7 @@ string
    	```
       		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
         ```
+	
      * 버퍼크기 8192chars(**큰 파일을 읽을 때 좋음**)
      * 문자열을 단순히 읽고 저장
      * 동기화 가능
