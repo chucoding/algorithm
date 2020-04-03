@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class No4503_Virus {
+public class No4503_Virus_array {
 
 	public static void main(String[] args) throws IOException {
 		
