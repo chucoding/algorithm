@@ -17,10 +17,10 @@ public class No4503_Virus_list {
 		int e = Integer.parseInt(br.readLine());
 		
 		ArrayList<Integer>[] v = new ArrayList[n];
-		int[] check = new int[n];
+		int[] visited = new int[n];
 		
 		for(int i=0; i<n; i++) {
-			check[i] = 0;
+			visited[i] = 0;
 			v[i] = new ArrayList<>();
 		}
 
@@ -40,16 +40,16 @@ public class No4503_Virus_list {
 
 		while(!q.isEmpty()) {
 			int node = q.poll();
-			check[node] = 1;
+			visited[node] = 1;
 			
 			for(int i=0; i<v[node].size(); i++) {
-				if(check[v[node].get(i)] == 0) q.offer(v[node].get(i));
+				if(visited[v[node].get(i)] == 0) q.offer(v[node].get(i));
 			}
 		}
 		
 		int answer = 0;
-		for(int i=0; i<check.length; i++) {
-			if(check[i] == 1) answer++;
+		for(int i=0; i<visited.length; i++) {
+			if(visited[i] == 1) answer++;
 		}
 		
 		System.out.println(answer-1);
