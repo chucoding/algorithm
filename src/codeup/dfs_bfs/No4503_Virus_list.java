@@ -16,12 +16,13 @@ public class No4503_Virus_list {
 		int n = Integer.parseInt(br.readLine());
 		int e = Integer.parseInt(br.readLine());
 		
-		ArrayList<Integer>[] v = new ArrayList[n];
+//		ArrayList<Integer>[] v = new ArrayList[n];
+		ArrayList<ArrayList<Integer>> v = new ArrayList<ArrayList<Integer>>();
 		int[] visited = new int[n];
 		
 		for(int i=0; i<n; i++) {
 			visited[i] = 0;
-			v[i] = new ArrayList<>();
+			v.add(new ArrayList<Integer>());
 		}
 
 		StringTokenizer st;
@@ -31,8 +32,8 @@ public class No4503_Virus_list {
 			int a = Integer.parseInt(st.nextToken())-1;
 			int b = Integer.parseInt(st.nextToken())-1;
 			
-			v[a].add(b);
-			v[b].add(a);
+			v.get(a).add(b);
+			v.get(b).add(a);
 		}
 		
 		Queue<Integer> q = new LinkedList<>();
@@ -42,8 +43,8 @@ public class No4503_Virus_list {
 			int node = q.poll();
 			visited[node] = 1;
 			
-			for(int i=0; i<v[node].size(); i++) {
-				if(visited[v[node].get(i)] == 0) q.offer(v[node].get(i));
+			for(int i=0; i<v.get(node).size(); i++) {
+				if(visited[v.get(node).get(i)] == 0) q.offer(v.get(node).get(i));
 			}
 		}
 		
