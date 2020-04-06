@@ -115,6 +115,24 @@ hash
    * 데이터의 삽입과 삭제시 기존 데이터를 밀어내거나 채우는 작업이 필요 없도록 특별한 알고리즘을 이용하여 데이터와 연관된 고유한 숫자를 만들어 낸뒤 이를 인덱스로 사용(배열의 느린 삽입,삭제 보완)
    * 자바에서는 **HashMap** collection 사용(HashTable도 있으나 충돌가능성이 커서 잘 사용하지 않는다.(HashMap이 좀 더 나중에 나옴)) 
 
+해쉬 맵 문제풀이 팁
+1. getOrDefault(있으면 반환,없으면 반환) -- key 값 같은거 밸류 개수 구하거나 더할때 유용함
+2. 맵에 맵 넣기 
+	
+	```
+	Map<String, Map<Integer, Integer>> map = new HashMap();
+        
+        for(int i=0; i<genres.length; i++) {
+        	if(map.get(genres[i]) != null) {
+        		map.get(genres[i]).put(i, plays[i]);
+        	} else {
+        		Map<Integer, Integer> playsMap = new HashMap<Integer, Integer>();
+        		playsMap.put(i, plays[i]);
+        		map.put(genres[i], playsMap);
+        	}
+        }
+	```
+
 stack & queue
 -----
 스택 - ~~Stack 자료구조 이용~~ //Stack은 list의 vector를 상속받기 때문에 성능이 저하됨
