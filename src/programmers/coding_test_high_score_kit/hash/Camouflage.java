@@ -5,26 +5,21 @@ import java.util.Map;
 
 public class Camouflage {
 
-	//식이 잘 이해가 안감
 	 public static int solution(String[][] clothes) {
-	     int answer = 0;
+	     int answer = 1;
 	     
-	     Map<String, Integer> map = new HashMap();
+	     Map<String, Integer> map = new HashMap<String, Integer>();
 	     
 	     for(int i=0; i<clothes.length; i++) {
 	    	map.put(clothes[i][1], map.getOrDefault(clothes[i][1], 0)+1);
 	     }
-
+	     
 	     if(map.size() == 1) answer = clothes.length;
 	     else {
-
-		     int typeCnt = 1;
-		     
-		     for(String key : map.keySet()) {
-		    	 typeCnt *= map.get(key)+1;
+	    	 for ( String key : map.keySet() ) {
+		    	 answer *= map.get(key)+1;
 		     }
-		     
-		     answer = typeCnt-1;
+	    	 answer -=1;
 	     }
 	     
 	     return answer;
