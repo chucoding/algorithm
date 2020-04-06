@@ -35,6 +35,13 @@ public class BestAlbum2 {
         	int deleteKey = treeMap.lastEntry().getKey(); //TreeMap 지울때 사용
         	int max = -1, nextmax = -1;
         	int maxIndex = -1, nextmaxIndex = -1;
+        	
+        	//해당 장르에서 가장 큰놈, 둘째놈 list에 넣기
+        	for(int g=0; g<genres.length; g++) {
+        		if(genres[g].equals(genre)) {
+        			//check
+        		}
+        	}
         }
         
         return answer;
