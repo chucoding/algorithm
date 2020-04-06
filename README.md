@@ -115,7 +115,10 @@ hash
    * 데이터의 삽입과 삭제시 기존 데이터를 밀어내거나 채우는 작업이 필요 없도록 특별한 알고리즘을 이용하여 데이터와 연관된 고유한 숫자를 만들어 낸뒤 이를 인덱스로 사용(배열의 느린 삽입,삭제 보완)
    * 자바에서는 **HashMap** collection 사용(HashTable도 있으나 충돌가능성이 커서 잘 사용하지 않는다.(HashMap이 좀 더 나중에 나옴)) 
    
-| First Header | Second Header | Third Header | | :------------ | :-----------: | -------------------: | | First row | Data | Very long data entry | | Second row | **Cell** | *Cell* | | Third row | Cell that spans across two columns || [Table caption, works as a reference][section-mmd-tables-table1]
+| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
+|:--------|:--------:|--------:|
+| 내용 11 | 내용 12 | 내용 13 |
+| 내용 21 | 내용 22 | 내용 23 |
 
 해쉬 맵 문제풀이 팁
 1. getOrDefault(있으면 반환,없으면 반환) -- key 값 같은거 밸류 개수 구하거나 더할때 유용함
