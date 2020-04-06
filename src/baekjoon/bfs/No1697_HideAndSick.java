@@ -31,6 +31,7 @@ public class No1697_HideAndSick {
 		q.offer(n);
 		
 		while(!q.isEmpty()) {
+			
 			int node = q.poll();
 			answer++;
 			
