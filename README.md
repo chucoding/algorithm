@@ -119,7 +119,8 @@ hash
 1. getOrDefault(있으면 반환,없으면 반환) -- key 값 같은거 밸류 개수 구하거나 더할때 유용함
 2. 맵에 맵 넣기 
 	
-	```Map<String, Map<Integer, Integer>> map = new HashMap();
+	```
+	Map<String, Map<Integer, Integer>> map = new HashMap();
         
         for(int i=0; i<genres.length; i++) {
         	if(map.get(genres[i]) != null) {
