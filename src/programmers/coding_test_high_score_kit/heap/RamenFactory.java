@@ -5,17 +5,27 @@ public class RamenFactory {
 	public static int solution(int stock, int[] dates, int[] supplies, int k) {
 		int answer = 0;
 		int index = 0;
+		int last_index = 0;
+		
 		while(stock < k-1) {
 			
 			int max = 0;
 			
-			while(index < dates.length) {
+			while(true) {
+				if(last_index > dates.length-1) {
+					last_index = dates.length-1;
+					break;
+				} else if((dates[last_index] + stock > k)) break;
+				
+				last_index++;
+			}
+			
+			while(index < last_index) {
 				if(stock - dates[index] < 0) break;
 				if(max < supplies[index]) max = supplies[index++];
 			}
-
+			
 			stock += max;
-			System.out.println(stock);
 			answer++;
 		}
 		
