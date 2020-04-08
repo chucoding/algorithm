@@ -2,8 +2,6 @@ package programmers.coding_test_high_score_kit.sort;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class TheLargestNumber {
 
@@ -21,8 +19,11 @@ public class TheLargestNumber {
 		 Arrays.sort(arr, new Comparator<String>() {
 			 @Override
 			 public int compare(String s1, String s2) {
-				 return (s2+s1).compareTo(s1+s2); //문자열의 사전순 값을 비교하여 그에 해당되는 int값을 리턴한다.
-				 //좌측값이 크면 1리턴
+				 return (s2+s1).compareTo(s1+s2);
+				 //문자열의 사전순 값을 비교하여 그에 해당되는 int값을 리턴한다.
+				 //s2+s1은 사전역순
+				 //좌측값이 크면 1리턴(바꿈), 리턴값이 -1(오른쪽이 크면)이나 0이면 자리바꿈
+				 // (s1+s2)compareTo(s2+s1) 비교하면서 들어가므로 시간이 지날수록 s1이 s2보다 작은값이 되버림
 			 }
 		 });
 
@@ -34,6 +35,7 @@ public class TheLargestNumber {
 			 answer+=arr[i];
 		 }
 		 
+		 System.out.println(answer);
 		 return answer;
     }
 	
