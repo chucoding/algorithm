@@ -1,53 +1,22 @@
 package programmers.coding_test_high_score_kit.heap;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 public class RamenFactory {
 
 	public static int solution(int stock, int[] dates, int[] supplies, int k) {
 		int answer = 0;
-		
-		Queue<Integer> queue = new LinkedList();
-		List list = new ArrayList();
-		
-		for(int i=0; i<dates.length; i++) {
-			queue.add(dates[i]);
-			list.add(supplies[i]);
-		}
-		
-		Arrays.sort(supplies);
-		
-		int dateIndex = 0;
-		
-		//하루에 한번 돌아야됨 - 재고가 계속 줄기때문
-		for(int i=0; i<k; i++) {
+		int index = 0;
+		while(stock < k-1) {
 			
-			if(i == dates[dateIndex]) {
-				for(int j=supplies.length-1; j>=0; j--) {
-					if(queue.peek() < supplies[j]) {
-						int date = dates[list.indexOf(supplies[j])];
-						
-					}
-				}
-				dateIndex++;
+			int max = 0;
+			
+			while(index < dates.length) {
+				if(stock - dates[index] < 0) break;
+				if(max < supplies[index]) max = supplies[index++];
 			}
-			
-			//하루당 밀가루 사용
-			stock--;
-			
-			//재고 채워넣기
-			if(stock == 0) {
-				
-				//계산해야됨 계산해서 최소값을 더해야됨
-				//stock += queue.poll();
-				answer++;
-			}
-			
-			if(queue.isEmpty()) break;
+
+			stock += max;
+			System.out.println(stock);
+			answer++;
 		}
 		
 		return answer;
