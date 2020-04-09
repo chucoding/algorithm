@@ -3,6 +3,9 @@ package programmers.coding_test_high_score_kit.heap;
 public class RamenFactory {
 
 	public static int solution(int stock, int[] dates, int[] supplies, int k) {
+		
+		long a = System.nanoTime();
+		
 		int answer = 0;
 		int index = 0;
 		int last_index = 0;
@@ -28,6 +31,9 @@ public class RamenFactory {
 			stock += max;
 			answer++;
 		}
+		
+		long b = System.nanoTime();
+	    System.out.println(b-a);
 		
 		return answer;
 	}
