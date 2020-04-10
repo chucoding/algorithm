@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class FindPrimeNumbers2 {
 
-	private static void isSosu(Set sosuList, StringBuilder a) {
+	private static void isSosu(Set set, StringBuilder a) {
         int b = Integer.parseInt(String.valueOf(a));
         boolean sosu = true;
         if (b <= 1) {
@@ -18,20 +18,24 @@ public class FindPrimeNumbers2 {
             }
         }
         if (sosu) {
-            sosuList.add(b);
+            set.add(b);
         }
     }
 	
 	public static void perm(char[] arr, int depth, int k, Set set) {
         if (depth == k) { 
             // 한번 depth 가 k로 도달하면 사이클이 돌았음. 출력함.
-            print(arr, k, set);
+        	System.out.println("-------------------");
+        	print(arr, k, set);
             return;
         } else {
-            for (int i = depth; i < arr.length; i++) {
+            for (int i = depth; i < arr.length; i++) { //문자열 최대 길이
                 swap(arr, i, depth);
                 perm(arr, depth + 1, k, set);
+                
                 swap(arr, i, depth);
+                System.out.println(arr);
+                System.out.println();
             }
         }
     }
@@ -47,6 +51,7 @@ public class FindPrimeNumbers2 {
         for (int i = 0; i < k; i++) {
             sb.append(arr[i]);
         }
+//        System.out.println(sb);
         isSosu(set, sb);
     }
 	
@@ -54,12 +59,12 @@ public class FindPrimeNumbers2 {
 		char[] list = numbers.toCharArray();
 		
 		Set<Integer> set = new HashSet<>();
-		for (int i = 1; i <= list.length; i++) {
+		for (int i = 1; i <= list.length; i++) { //문자열 최대 길이
 			perm(list, 0, i, set);
 		}
 
-		System.out.println("소수 리스트입니다.");
-		System.out.println(set);
+//		System.out.println("소수 리스트입니다.");
+//		System.out.println(set);
 
 		return set.size();
 	}
