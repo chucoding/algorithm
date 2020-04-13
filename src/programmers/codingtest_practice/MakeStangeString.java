@@ -28,15 +28,12 @@ public class MakeStangeString {
 		}
 
 		answer = sb.toString();
-		System.out.println(answer);
 		return answer;
 	}
 	
+	//테스트 문자열
 	public static void main(String[] args) {
 		solution("try hello world");
 		solution("     s           d");
-//		solution(" g sd s  ");
-//		solution(" G ede s  ");
-//		solution(" G ede s ds123 ");
 	}
 }
