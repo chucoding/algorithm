@@ -11,7 +11,6 @@ public class FindPrimeNumbers {
 			for(int i=0; i<k; i++) {
 				sb.append(arr[i]);
 			}
-			
 			int n = Integer.parseInt(String.valueOf(sb));
 			boolean b = true;
 			if(n <= 1) return;
@@ -55,6 +54,7 @@ public class FindPrimeNumbers {
 		}
 
 		answer = set.size();
+		System.out.println(answer);
 		return answer;
 	}
     
