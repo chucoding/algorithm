@@ -7,7 +7,7 @@ public class MakeStangeString {
 	public static String solution(String s) {
 		String answer = "";
 
-		StringTokenizer st = new StringTokenizer(s);
+		StringTokenizer st = new StringTokenizer(s," ",true);
 		String[] str = new String[st.countTokens()];
 		StringBuilder sb = new StringBuilder();
 		
@@ -17,12 +17,14 @@ public class MakeStangeString {
 		}
 		
 		for(i=0; i<str.length; i++) {
-			for(int j=0; j<str[i].length(); j++) {
-				if(j % 2 == 0 || j == 0) sb.append(Character.toUpperCase(str[i].charAt(j)));
-				else if(j % 2 == 1) sb.append(Character.toLowerCase(str[i].charAt(j)));
+			
+			if(str[i].startsWith(" ")) sb.append(" ");
+			else {
+				for(int j=0; j<str[i].length(); j++) {
+					if(j % 2 == 0 || j == 0) sb.append(Character.toUpperCase(str[i].charAt(j)));
+					else if(j % 2 == 1) sb.append(Character.toLowerCase(str[i].charAt(j)));
+				}
 			}
-			if(i == str.length-1) break;
-			sb.append(" ");
 		}
 
 		answer = sb.toString();
@@ -32,5 +34,9 @@ public class MakeStangeString {
 	
 	public static void main(String[] args) {
 		solution("try hello world");
+		solution("     s           d");
+//		solution(" g sd s  ");
+//		solution(" G ede s  ");
+//		solution(" G ede s ds123 ");
 	}
 }
