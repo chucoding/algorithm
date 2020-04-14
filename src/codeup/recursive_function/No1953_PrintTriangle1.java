@@ -6,21 +6,24 @@ import java.io.InputStreamReader;
 
 public class No1953_PrintTriangle1 {
 
-	public static String recursive(String s, int n) {
+	public static void recursive(int i, int n) {
 		
-		if(n <= 2) {
-			s += "*";
-			return s;
+		if(n == 1) return;
+		else {
+			if(n == i) {
+				i = 0;
+				n -= 1;
+				System.out.println();
+			}
+			System.out.print("*");
+			recursive(i+1, n);
 		}
-		System.out.println();
-		return recursive(s, n-1) + recursive(s, n-2);
 	}
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Character.getNumericValue(br.read());
 		
-		String s = "";
-		recursive(s, n);
+		recursive(0, n);
 	}
 }
