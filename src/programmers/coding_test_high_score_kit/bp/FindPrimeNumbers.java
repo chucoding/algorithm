@@ -5,56 +5,56 @@ import java.util.Set;
 
 public class FindPrimeNumbers {
 
-	public static void perm(int[] arr, int depth, int k, Set set) {
-		if(depth == k) {
+	public static void permutation(int[] arr, int start, int end, Set set) {
+
+		if(start == end) {
 			StringBuilder sb = new StringBuilder();
-			for(int i=0; i<k; i++) {
+			for(int i=0; i<start; i++) {
 				sb.append(arr[i]);
 			}
-			int n = Integer.parseInt(String.valueOf(sb));
+			
+			int n = Integer.parseInt(new String(sb));
 			boolean b = true;
-			if(n <= 1) return;
-			for(int j=2; j<=Math.sqrt(n); j++) {
-				if(n % j == 0) {
+			
+			if(n <= 2) return;
+			for(int i=2; i*i <= n; i++) {
+				if(n % i == 0) {
 					b = false;
 					break;
 				}
 			}
+			
 			if(b) set.add(n);
 			return;
 		}
-		else {
-			for(int i=depth; i<arr.length; i++) {
-				swap(arr, depth, i);
-				perm(arr, depth+1, k, set);
-				swap(arr, depth, i);
-			}
+		
+		for(int i=start; i<arr.length; i++) {
+			swap(arr, start, i);
+			permutation(arr, start+1, end, set);
+			swap(arr, start, i);
 		}
 	}
 	
 	public static void swap(int[] arr, int i, int j) {
-		int temp = arr[i];
+		int tmp = arr[i];
 		arr[i] = arr[j];
-		arr[j] = temp;
+		arr[j] = tmp;
 	}
 	
 	public static int solution(String numbers) {
 		int answer = 0;
-		
-		char[] list = numbers.toCharArray();
 		int[] arr = new int[numbers.length()];
-		for(int i=0; i<arr.length; i++) {
-			arr[i] = Integer.parseInt(String.valueOf(list[i]));
+
+		for(int i=0; i<numbers.length(); i++) {
+			arr[i] = Character.getNumericValue(numbers.charAt(i));
 		}
 		
 		Set set = new HashSet();
-
-		for(int i=1; i<=numbers.length(); i++) {
-			perm(arr, 0, i, set);
+		for(int i=1; i<=arr.length; i++) {
+			permutation(arr, 0, i, set);
 		}
-
-		answer = set.size();
-		System.out.println(answer);
+		
+		System.out.println(set.size());
 		return answer;
 	}
     
@@ -62,5 +62,6 @@ public class FindPrimeNumbers {
 		
     	int a = solution("17");
     	int b = solution("011");
+    	
     }
 }
