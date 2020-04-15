@@ -17,7 +17,7 @@ public class GcdAndLcm {
 			}
 		}
 		
-		answer[1] = answer[0] * n/answer[0] * m/answer[0];
+		answer[1] = n * m / answer[0];
 		
 		return answer;
 	}
