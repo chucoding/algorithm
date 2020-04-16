@@ -21,7 +21,6 @@ public class LifeBoat {
 	}
 	
 	public static void main(String[] args) {
-//		System.out.println(solution(new int[] {70, 50, 80, 50}, 100));
-		System.out.println(solution(new int[] {25, 25, 25, 25}, 100));
+		System.out.println(solution(new int[] {70, 50, 80, 50}, 100));
 	}
 }
