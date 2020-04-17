@@ -17,21 +17,17 @@ public class FailureRate {
         double failures[] = new double[N+1];
         
         for(int i=0; i<stages.length; i++) {
+        	if(stages[i] > N) continue;
         	failure[stages[i]-1]++;
-        }
-
-        for(int i=0; i<failure.length; i++) {
-        	System.out.println(failure[i]);
         }
         
         int sum = stages.length; 
         for(int i=0; i<failure.length; i++) {
-        	failures[i] = failure[i] / sum;
-        	sum -= failure[i];
-        }
-        
-        for(int i=0; i<failure.length; i++) {
-        	System.out.println(failure[i] +" "+failures[i]);
+        	if(sum == 0) failures[i] = 0.0;
+        	else {
+        		failures[i] = failure[i] / sum;
+        		sum -= failure[i];
+        	}
         }
         
         Arrays.sort(arr, new Comparator<Integer>() {
@@ -49,6 +45,7 @@ public class FailureRate {
         });
 
         answer = new int[N];
+        
         for(int i=0; i<answer.length; i++) {
         	answer[i] = arr[i] + 1;
         }
