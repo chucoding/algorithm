@@ -17,7 +17,6 @@ public class FailureRate {
         double failures[] = new double[N+1];
         
         for(int i=0; i<stages.length; i++) {
-        	if(stages[i] > N) continue;
         	failure[stages[i]-1]++;
         }
         
