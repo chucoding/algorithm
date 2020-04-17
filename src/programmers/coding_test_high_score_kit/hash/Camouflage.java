@@ -14,9 +14,9 @@ public class Camouflage {
 		}
 
 		for(String s : map.keySet()){
-			answer *= map.get(s) + 1;
+			answer *= map.get(s) + 1; // 빈 값도 포함해주기 위해 +1
 		}
-		answer -= 1;
+		answer -= 1; // 전부다 빈값인 경우는 안되므로 전체에서 -1
 
 		return answer;
 	 }

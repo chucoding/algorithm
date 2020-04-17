@@ -9,26 +9,27 @@ public class TruckPassingByABridge {
 
 		int answer = 0;
 		int[] endTime = new int[truck_weights.length];
-		Queue<Integer> onBridge = new LinkedList<>(); //다리
+		Queue<Integer> q = new LinkedList<>(); //다리
 		
-		int cur = 0; //트럭순서
+		int i = 0; //트럭순서
 		
 		while(true) {
+			
 			// 도착한 버스 제거
-			if(!onBridge.isEmpty() && endTime[onBridge.peek()] == answer) {
-				weight += truck_weights[onBridge.poll()];
+			if(!q.isEmpty() && endTime[q.peek()] == answer) {
+				weight += truck_weights[q.poll()];
 			}
 			
 			// 대기하는 버스 추가
-			if(cur < truck_weights.length && truck_weights[cur] <= weight) {
-				onBridge.add(cur);
-				endTime[cur] = answer + bridge_length; //다리길이 1당 1초
-				weight -= truck_weights[cur];
-				cur++;
+			if(i < truck_weights.length && truck_weights[i] <= weight) {
+				q.offer(i);
+				endTime[i] = answer + bridge_length; //다리길이 1당 1초
+				weight -= truck_weights[i];
+				i++;
 			}
 			
 			answer++;
-			if(onBridge.isEmpty()) break;
+			if(q.isEmpty()) break;
 		}
         
         return answer;

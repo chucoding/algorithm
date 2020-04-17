@@ -5,15 +5,21 @@ import java.util.Arrays;
 public class Hindex {
 
 	public int solution(int[] citations) {
-        int answer = 0;
-        Arrays.sort(citations);
-        
-        for(int i=0; i<citations.length; i++){
-            if(i >= citations[citations.length-1-i]) return i;
-        }
-        
-        if(answer == 0) answer = citations.length;
-        
-        return answer;
-    }
+		int answer = 0;
+
+		Arrays.sort(citations);
+
+		if(citations[0] >= citations.length) answer = citations.length;
+		else {
+			for(int i=0; i<citations.length; i++){
+				if(citations[i] > citations.length - i) {
+					if(citations[i-1] < citations.length-i) answer = citations.length-i;
+					else answer = citations[i-1];
+					break;
+				} 
+			}
+		}
+
+		return answer;
+	}
 }
