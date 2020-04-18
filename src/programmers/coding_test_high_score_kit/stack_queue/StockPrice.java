@@ -32,7 +32,7 @@ public class StockPrice {
 		
         for(int i=0; i<prices.length; i++) {
         	
-        	if(!stack.isEmpty() && stack.peek().getStock() > prices[i]) {
+        	while(!stack.isEmpty() && stack.peek().getStock() > prices[i]) {
         		Stock stock = stack.pop();
         		answer[stock.getIndex()] = i - stock.getIndex();
         	}
@@ -44,16 +44,21 @@ public class StockPrice {
         	stack.push(stock);
         }
         
-        int i = prices.length-1;
-        while(!stack.isEmpty() && i>=0) {
-        	
-        	if(answer[i] == 0) {
-        		Stock stock = stack.pop();
-        		answer[i] = prices.length-1 - stock.getIndex();
-        	}
-        	i--;
+        while(!stack.isEmpty()) {
+        	Stock stock = stack.pop();
+        	answer[stock.getIndex()] = prices.length-1 - stock.getIndex() -1;
         }
-
+        
+//        int i = prices.length-1;
+//        while(!stack.isEmpty() && i>=0) {
+//        	
+//        	if(answer[i] == 0) {
+//        		Stock stock = stack.pop();
+//        		answer[i] = prices.length-1 - stock.getIndex();
+//        	}
+//        	i--;
+//        }
+        
         for(int j=0; j<answer.length; j++) {
         	System.out.println(answer[j]);
         }
