@@ -12,6 +12,7 @@ public class StockPrice2 {
                 	answer[i] = j-i;
                 	break;
                 }
+                
                 if(j==answer.length-1) answer[i] = j-i;
             }
         }
