@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 class Stock {
+	
 	private int index;
 	private int stock;
 	
@@ -52,12 +53,18 @@ public class StockPrice {
         	}
         	i--;
         }
+
+        for(int j=0; j<answer.length; j++) {
+        	System.out.println(answer[j]);
+        }
         
         return answer;
     }
 
 	public static void main(String[] args) {
 //		solution(new int[] {1,2,3,2,3});
-		solution(new int[] {1,2,9,2,3,4,5,4,1,3,3});
+//		solution(new int[] {1,2,9,2,3,4,5,4,1,3,3});
+//		solution(new int[] {1,2,3,4,3,2,3});
+		solution(new int[] {1,2,3,2,3,2,1,0});
 	}
 }
