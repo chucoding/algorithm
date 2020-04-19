@@ -9,21 +9,15 @@ public class StockPrice3 {
 
 		int[] answer = new int[prices.length];
         
-        Deque<Integer> stack = new ArrayDeque<Integer>();
-		int i=0; 
+		Deque<Integer> stack = new ArrayDeque<Integer>();
 
-		stack.push(i);
-		for(i=1; i<prices.length; i++) {
+		for(int i=0; i<prices.length; i++) {
 			while(!stack.isEmpty() && prices[i] < prices[stack.peek()]) {
 				int pre = stack.pop();
 				prices[pre] = i - pre;
 			}
 			stack.push(i);
-		}
-		
-		while(!stack.isEmpty()) {
-			int pre = stack.pop();
-			answer[pre] = i - pre -1;
+			answer[i] = prices.length-1 - i;
 		}
 		
         return answer;
