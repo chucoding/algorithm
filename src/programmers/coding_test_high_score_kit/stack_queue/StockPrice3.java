@@ -7,6 +7,8 @@ public class StockPrice3 {
 
 	public static int[] solution(int[] prices) {
 
+		long a = System.nanoTime();
+		
 		int[] answer = new int[prices.length];
         
 		Deque<Integer> stack = new ArrayDeque<Integer>();
@@ -19,6 +21,9 @@ public class StockPrice3 {
 			stack.push(i);
 			answer[i] = prices.length-1 - i;
 		}
+		
+		long b = System.nanoTime();
+        System.out.println(b-a);
 		
         return answer;
     }

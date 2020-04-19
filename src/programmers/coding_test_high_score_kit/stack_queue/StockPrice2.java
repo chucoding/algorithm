@@ -4,6 +4,8 @@ public class StockPrice2 {
 
 	public static int[] solution(int[] prices) {
 
+		long a = System.nanoTime();
+		
 		int[] answer = new int[prices.length];
         
         for(int i=0; i<prices.length-1; i++) {
@@ -16,6 +18,10 @@ public class StockPrice2 {
                 if(j==answer.length-1) answer[i] = j-i;
             }
         }
+        
+        long b = System.nanoTime();
+        System.out.println(b-a);
+        
         return answer;
     }
 

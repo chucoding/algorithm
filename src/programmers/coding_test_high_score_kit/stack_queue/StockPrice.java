@@ -27,6 +27,8 @@ public class StockPrice {
 
 	public static int[] solution(int[] prices) {
 
+		long a = System.nanoTime();
+		
 		int[] answer = new int[prices.length];
 		Deque<Stock> stack = new ArrayDeque<Stock>();
 		
@@ -48,6 +50,9 @@ public class StockPrice {
         	Stock stock = stack.pop();
         	answer[stock.getIndex()] = prices.length-1 - stock.getIndex() -1;
         }
+        
+        long b = System.nanoTime();
+        System.out.println(b-a);
         
 //        int i = prices.length-1;
 //        while(!stack.isEmpty() && i>=0) {
