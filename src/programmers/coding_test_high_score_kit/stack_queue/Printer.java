@@ -9,6 +9,8 @@ public class Printer {
 	public static int solution(int[] priorities, int location) {
         int answer = 0;
         
+		long a = System.nanoTime();
+        
         Queue<Integer> indexQ = new LinkedList<Integer>();
         Queue<Integer> valueQ = new LinkedList<Integer>();
         
@@ -34,12 +36,15 @@ public class Printer {
             }
         }
         
+        long b = System.nanoTime();
+        System.out.println(b-a);
+        
         return answer+1;
     }
 	
 	public static void main(String[] args) {
 		System.out.println(solution(new int[] {1,6,3,1,2,5,6,7,2,3}, 3));
-		System.out.println(solution(new int[] {2,1,3,2}, 2));
-		System.out.println(solution(new int[] {1,1,9,1,1,1}, 0));
+//		System.out.println(solution(new int[] {2,1,3,2}, 2));
+//		System.out.println(solution(new int[] {1,1,9,1,1,1}, 0));
 	}
 }
