@@ -1,4 +1,4 @@
-package programmers.coding_test_high_score_kit.stack_queue;
+package programmers.coding_test_high_score_kit.stack_queue.printer;
 
 public class Printer3 {
 
