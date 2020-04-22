@@ -1,46 +1,51 @@
 package programmers.coding_test_high_score_kit.stack_queue.function_develop;
 
-import java.util.Queue;
 import java.util.ArrayDeque;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
 
 class FunctionDevelopment2 {
-    public static int[] solution(int[] progresses, int[] speeds) {
+
+	public static int[] solution(int[] progresses, int[] speeds) {
         int[] answer = {};
-        
-        Queue<Integer> indexQ = new ArrayDeque<Integer>();
-        List<Integer> list = new ArrayList<Integer>();
-        
-        for(int i=0; i<speeds.length; i++){
-            indexQ.offer(i);
+        Deque<Integer> q = new ArrayDeque<Integer>();
+        List<Integer> l = new ArrayList<Integer>();
+
+        for(int i=0; i<speeds.length; i++) {
+        	q.offer(i);
         }
         
-        int cnt = 0;
-        int j=0;
-        while(!indexQ.isEmpty()){
-            int i = indexQ.poll();
-            progresses[i] += speeds[i];
-            
-            if(progresses[i] >= 100) {
-                cnt++;
-                System.out.println(i);
-                if(i == j + cnt-1) {
-                    list.add(cnt);                    
-                    cnt = 0;
-                    j++;
-                }
-                
-            } else {
-                indexQ.offer(i);
-            }
+        int count = 0;
+        while(!q.isEmpty()) {
+
+        	int size = q.size();
+        	
+        	for(int i=0; i<size; i++) {
+        		int j= q.pop();
+        		progresses[j] += speeds[j];
+        		q.offer(j);
+        	}
+        	
+        	int cnt = 0;
+	    	 for(int i=0; i<size; i++) {
+	    		 if(progresses[q.peek()] >= 100) {
+	    			 cnt++;
+	    			 q.poll();
+	    		 } else break;
+	    	 }
+        	
+	    	 if(cnt != 0) {
+	    		 l.add(cnt);
+	    	 }
+        	
         }
         
-        answer = new int[list.size()];
-        for(int i=0; i<list.size(); i++){
-            answer[i] = list.get(i);
+        answer = new int[l.size()];
+        for(int i=0; i<l.size(); i++) {
+        	answer[i] = l.get(i);
         }
-            
+
         return answer;
     }
 	 

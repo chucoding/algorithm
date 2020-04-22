@@ -12,8 +12,7 @@ public class FunctionDevelopment {
 	  
 	     Queue<Integer> sliceQ = new LinkedList();
 	     Queue<Integer> processQ = new LinkedList();
-	     
-	     List<Integer> list = new ArrayList(); // 나중에 배열로 바꿀것 
+	     List<Integer> list = new ArrayList();
 
 	     for(int i=0; i<progresses.length; i++) {
 	    	 processQ.add(progresses[i]);
