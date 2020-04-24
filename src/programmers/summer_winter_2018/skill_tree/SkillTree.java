@@ -1,7 +1,6 @@
 package programmers.summer_winter_2018.skill_tree;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.LinkedList;
 
 public class SkillTree {
 
@@ -9,34 +8,34 @@ public class SkillTree {
         int answer = 0;
         
         char[] s = skill.toCharArray();
-        Deque<Character> q = new ArrayDeque<Character>();
+        LinkedList<Character> list = new LinkedList<Character>();
         
-        int t = 0;
+        
         for(int i=0; i<skill_trees.length; i++) {
-
-        	for(int j=t; j<s.length; j++) {
-            	q.offer(s[j]);
+        	
+        	for(int j=0; j<s.length; j++) {
+            	list.add(s[j]);
             }
         	
         	boolean b = true;
         	
         	for(int j=0; j<skill_trees[i].length(); j++) {
-
-        		if(!q.isEmpty() && skill_trees[i].charAt(j) == q.peek()) q.poll();
+        		
+        		if(!list.isEmpty() && skill_trees[i].charAt(j) == list.getFirst()) list.removeFirst();
         		else {
-        			while(!q.isEmpty()) {
-        				if(skill_trees[i].charAt(j) == q.poll()) {
+        			for(int k=0; k<list.size(); k++) {
+        				if(skill_trees[i].charAt(j) == list.get(k)) {
         					b = false;
-        					t++; 
-        					//중간삭제?? list필요
+        					list.remove(k);
         					break;
         				}
         			}
         		}
+        		
         		if(!b) break;
         	}
         	
-        	q.clear();
+        	list.clear();
         	if(b) answer++;
         }
         
