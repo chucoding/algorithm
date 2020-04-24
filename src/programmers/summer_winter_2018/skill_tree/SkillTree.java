@@ -6,10 +6,11 @@ public class SkillTree {
 
 	public static int solution(String skill, String[] skill_trees) {
         int answer = 0;
+
+        long a = System.nanoTime();
         
         char[] s = skill.toCharArray();
         LinkedList<Character> list = new LinkedList<Character>();
-        
         
         for(int i=0; i<skill_trees.length; i++) {
         	
@@ -39,7 +40,9 @@ public class SkillTree {
         	if(b) answer++;
         }
         
-        System.out.println(answer);
+        long b = System.nanoTime();
+        System.out.println(b-a);
+        
         return answer;
     }
 	
