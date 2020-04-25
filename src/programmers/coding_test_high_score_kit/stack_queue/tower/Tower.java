@@ -1,10 +1,12 @@
-package programmers.coding_test_high_score_kit.stack_queue;
+package programmers.coding_test_high_score_kit.stack_queue.tower;
 
 import java.util.Stack;
 
 public class Tower {
 
 	public static int[] solution(int[] heights) {
+		
+		long a = System.nanoTime();
 		
 		int[] answer = new int[heights.length];
         Stack<Integer> stack = new Stack<>();
@@ -24,6 +26,9 @@ public class Tower {
         		}
         	}
         }
+        
+        long b = System.nanoTime();
+        System.out.println(b-a);
         
         return answer;
     }
