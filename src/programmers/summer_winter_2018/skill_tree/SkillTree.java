@@ -27,7 +27,6 @@ public class SkillTree {
         			for(int k=0; k<list.size(); k++) {
         				if(skill_trees[i].charAt(j) == list.get(k)) {
         					b = false;
-        					list.remove(k);
         					break;
         				}
         			}
