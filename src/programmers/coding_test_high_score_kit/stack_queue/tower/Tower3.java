@@ -1,8 +1,5 @@
 package programmers.coding_test_high_score_kit.stack_queue.tower;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 public class Tower3 {
 
 	public static int[] solution(int[] heights) {
@@ -33,7 +30,7 @@ public class Tower3 {
 	
 	public static void main(String[] args) {
 		
-		int[] heights = {6,9,5,7,4};
+		int[] heights = {6,9,5,7,4,5};
 		int[] res = solution(heights);
 		
 		for(int i : res) {
