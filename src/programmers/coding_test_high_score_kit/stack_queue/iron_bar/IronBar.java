@@ -24,6 +24,7 @@ public class IronBar {
         		}
         	}
         }
+        
         return answer;
     }
 	
