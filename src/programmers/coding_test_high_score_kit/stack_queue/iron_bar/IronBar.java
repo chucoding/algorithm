@@ -10,21 +10,17 @@ public class IronBar {
         
         Deque<Character> stack = new ArrayDeque<Character>();
         char[] c = arrangement.toCharArray();
-        boolean b = true;
         
         for(int i=0; i<c.length; i++) {
         	
-        	if(c[i] == '(') {
-        		stack.push(c[i]);
-        		b = true;
-        	} else {
-        		if(!b) {
+        	if(c[i] == '(') stack.push(c[i]);
+        	else {
+        		if(c[i-1] == ')') {
         			stack.pop();
         			answer++;
         		}else {
         			stack.pop();
         			answer += stack.size();
-        			b = false;
         		}
         	}
         }
