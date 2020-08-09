@@ -7,8 +7,6 @@ import java.util.StringTokenizer;
 
 public class RgbDistance4 {
 
-	private static int min = 1000;
-	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -16,36 +14,58 @@ public class RgbDistance4 {
 		
 		for(int i=0; i<n; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
+			
 			arr[i][0] = Integer.parseInt(st.nextToken());
 			arr[i][1] = Integer.parseInt(st.nextToken());
 			arr[i][2] = Integer.parseInt(st.nextToken());
 		}
 		
-		seperate(1, 1, 2, arr, arr[0][0]);
-		seperate(1, 0, 2, arr, arr[0][1]);
-		seperate(1, 0, 1, arr, arr[0][2]);
+		int value = 0;
+		int idx = 0;
+		int pivot = 0;
+		int superMin = Integer.MAX_VALUE;
+		int min = 1000;
 		
-		System.out.println(min);
-	}
+		for(int i=0; i<n; i++) {
 	
-	public static void seperate(int i, int a, int b, int[][] arr, int num) {
-		
-		if(i == arr.length) {
-			if(min > num) min = num;
-			return;
+			min = 1000;
+			
+			if(arr[i][0] < min) {
+				idx = 0;
+				min = arr[i][0];
+			}
+			if(arr[i][1] < min) {
+				idx = 1;
+				min = arr[i][1];
+			}
+			if(arr[i][2] < min) {
+				idx = 2;
+				min = arr[i][2];
+			}
+
+			value += arr[i][idx];
+			pivot = idx;
+			
+			for(int j=i-1; j>=0; j--) {
+				if(arr[j][(idx+1)%3] < arr[j][(idx+2)%3]) { idx = (idx+1)%3; }
+				else { idx = (idx+2)%3; }
+				
+				value += arr[j][idx];
+			}
+			
+			idx = pivot;
+			
+			for(int j=i+1; j<n; j++) {
+				if(arr[j][(idx+1)%3] < arr[j][(idx+2)%3]) { idx = (idx+1)%3; }
+				else { idx = (idx+2)%3; }
+				
+				value += arr[j][idx];
+			}
+			
+			if(superMin > value) { superMin = value; }
+			value = 0;
 		}
 		
-		if(arr[i][a] > arr[i][b]) {
-			num += arr[i][b];
-			a = (b+1)%3;
-			b = (b+2)%3;
-		}
-		else {
-			num += arr[i][a];
-			a = (a+1)%3;
-			b = (a+2)%3;
-		}
-		
-		seperate(i+1, a, b, arr, num);
+		System.out.println(superMin);
 	}
 }
