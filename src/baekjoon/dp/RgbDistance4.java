@@ -7,65 +7,58 @@ import java.util.StringTokenizer;
 
 public class RgbDistance4 {
 
+	private static int[][] visited;
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		int[][] arr = new int[n][3];
+		int min = Integer.MAX_VALUE;
 		
 		for(int i=0; i<n; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			
 			arr[i][0] = Integer.parseInt(st.nextToken());
 			arr[i][1] = Integer.parseInt(st.nextToken());
 			arr[i][2] = Integer.parseInt(st.nextToken());
 		}
 		
-		int value = 0;
-		int idx = 0;
-		int pivot = 0;
-		int superMin = Integer.MAX_VALUE;
-		int min = 1000;
-		
+		visited = new int[n][3];
 		for(int i=0; i<n; i++) {
-	
-			min = 1000;
-			
-			if(arr[i][0] < min) {
-				idx = 0;
-				min = arr[i][0];
+			for(int j=0; j<3; j++) {
+				if(visited[i][j] != 0) continue;
+				int sum = seperate(i, j, arr);
+				if(min > sum) min = sum; 
 			}
-			if(arr[i][1] < min) {
-				idx = 1;
-				min = arr[i][1];
-			}
-			if(arr[i][2] < min) {
-				idx = 2;
-				min = arr[i][2];
-			}
-
-			value += arr[i][idx];
-			pivot = idx;
-			
-			for(int j=i-1; j>=0; j--) {
-				if(arr[j][(idx+1)%3] < arr[j][(idx+2)%3]) { idx = (idx+1)%3; }
-				else { idx = (idx+2)%3; }
-				
-				value += arr[j][idx];
-			}
-			
-			idx = pivot;
-			
-			for(int j=i+1; j<n; j++) {
-				if(arr[j][(idx+1)%3] < arr[j][(idx+2)%3]) { idx = (idx+1)%3; }
-				else { idx = (idx+2)%3; }
-				
-				value += arr[j][idx];
-			}
-			
-			if(superMin > value) { superMin = value; }
-			value = 0;
 		}
 		
-		System.out.println(superMin);
+		System.out.println(min);
+	}
+	
+	public static int seperate(int i, int j, int[][] arr) {
+		
+		int sum = arr[i][j];
+		visited[i][j] = 1;
+		
+		int pivot = j;
+		
+		for(int k=i-1; k>=0; k--) {
+			if(visited[k][(j+1)%3] != 0) { j = (j+1)%3; }
+			
+			
+			sum += arr[k][j];
+			visited[k][j] = 1;
+		}
+		
+		j = pivot;
+		
+		for(int k=i+1; k<arr.length; k++) {
+			if(arr[k][(j+1)%3] < arr[k][(j+2)%3]) { j = (j+1)%3; }
+			else { j = (j+2)%3; }
+			
+			sum += arr[k][j];
+			visited[k][j] = 1;
+		}
+		
+		return sum;
 	}
 }
