@@ -15,7 +15,7 @@ public class No15665_NnM {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int len = Integer.parseInt(st.nextToken());
-		int cnt = Integer.parseInt(st.nextToken());
+		int depth = Integer.parseInt(st.nextToken());
 		
 		st = new StringTokenizer(br.readLine());
 		
@@ -35,19 +35,23 @@ public class No15665_NnM {
 			}
 		}
 
-		for(int i=0; i<nList.size(); i++) {
-			for(int j=0; j<cnt; j++) {
-				getSequence(nList.get(i), i, 0, cnt);
-			}
-		}
-		
-//		System.out.print(nList.get(i)+" ");
-		
+		boolean[] visited = new boolean[depth];
+		getSequence(arr, visited, depth, 0);
 	}
 	
-	public static void getSequence(int n, int length, int j, int cnt) {
-		for(int k=0; k<cnt; k++) {
-			
+	public static void getSequence(int[] arr, boolean[] visited, int depth, int i) {
+		if(i == depth) {
+			for(int j=0; j<depth; j++) {
+				System.out.print(arr[j]+" ");
+			}
+			System.out.println();
+			return;
 		}
+		
+		visited[i] = true;
+		getSequence(arr, visited, depth, i++);
+		
+		visited[i] = false;
+		getSequence(arr, visited, depth, i);
 	}
 }
