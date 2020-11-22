@@ -15,135 +15,98 @@ public class QueensAttack2 {
     		board[obstacles[i][0]-1][obstacles[i][1]-1] = 1;
     	}
     	
+		int x = r_q-1;
+		int y = c_q-1;
+    	
     	//왼쪽 위 대각선
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
     		
     		x++;
     		y--;
+    		if(x > n-1 || y < 0 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//위
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
     		
     		x++;
-    		y--;
+    		if(x > n-1 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//오른쪽 위 대각선
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
     		
     		x++;
-    		y--;
+    		y++;
+    		if(x > n-1 || y > n-1 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//오른쪽
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
     		
-    		x++;
-    		y--;
+    		y++;
+    		if(y > n-1 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//오른쪽 아래 대각선
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
     		
-    		x++;
-    		y--;
+    		x--;
+    		y++;
+    		if(x < 0 || y > n-1 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//아래
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
-    		
-    		x++;
-    		y--;
+    		x--;
+    		if(x < 0 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//왼쪽 아래 대각선
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
-    		
-    		x++;
+    		x--;
     		y--;
+    		if(x < 0 || y < 0 || board[x][y] == 1) break;
     		count++;
     	}
     	
+    	x = r_q-1;
+    	y = c_q-1;
+    	
+    	//왼
     	while(true) {
-    		int x = r_q-1;
-    		int y = c_q-1;
-    		if(x >= n-1 || y < 1 || board[x][y] == 1) break;
-    		
-    		x++;
     		y--;
+    		if(y < 0 || board[x][y] == 1) break;
     		count++;
     	}
     	
     	return count;
     }
     
-    static void move(int n, int r_q, int c_q, int count, int[][] board) {
- 
-    	if(r_q < 1 || r_q >= n-1 || c_q < 1 || c_q >= n-1 || board[r_q][c_q] == 1) return;
-    	
-    	if(r_q < n-1 && c_q > 0) {
-    		count++;
-    		move(n, r_q+1, c_q-1, count, board); 
-    	}
-    	
-    	if(r_q < n-1) {
-    		count++;
-    		move(n, r_q+1, c_q, count, board); //위
-    	}
-    	
-    	if(r_q < n-1 && c_q < n-1) {
-    		count++;
-    		move(n, r_q+1, c_q+1, count, board); //오른쪽 위 대각선
-    	}
-    	
-    	if(c_q < n-1) {
-    		count++;
-    		move(n, r_q, c_q+1, count, board); //오른쪽
-    	}
-    	
-    	if(r_q > 0 && c_q < n-1) {
-    		count++;
-    		move(n, r_q-1, c_q+1, count, board); //오른쪽 아래 대각선
-    	}
-    	
-    	if(r_q > 0) {
-    		count++;
-    		move(n, r_q-1, c_q, count, board); //아래
-    	}
-    	
-    	if(r_q > 0 && c_q > 0) {
-    		count++;
-    		move(n, r_q-1, c_q-1, count, board); //왼쪽 아래 대각선
-    	}
-    	
-    	if(c_q > 0) {
-    		count++;
-    		move(n, r_q, c_q-1, count, board); //왼
-    	}
-    }
-
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
