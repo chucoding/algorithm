@@ -1,21 +1,71 @@
 package hackerrank;
 
 import java.io.IOException;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Scanner;
-
 
 public class OrganizingContainersOfBalls {
     // Complete the organizingContainers function below.
     static String organizingContainers(int[][] container) {
-    	String result = "Impossible";
-    	for(int i=0; i<container.length; i++) {
-    		for(int j=0; j<container[i].length; j++) {
+    	int len = container.length;
+    	
+    	for(int i=0; i<len; i++) {
+    		int loc = -1;
+    		boolean b = false;
+    		for(int j=0; j<len; j++) {
     			if(container[i][j] != 0) {
+    				int sum_x = 0;
+    		    	int sum_y = 0;
+    		    	
+    		    	//condition check
+    		    	for(int k=0; k<len; k++) {
+    		    		if(k != j) {
+    		    			sum_x += container[i][k];
+    		    		}
+    		    		
+    		    		if(k != i) {
+    		    			sum_y += container[k][j];
+    		    		}
+    		    	}
+
+    		    	//swap
+    		    	if(sum_x == sum_y) {
+    		    		b = true;
+    		    		loc = j;
+        		    	for(int k=0; k<len; k++) {
+        		    		if(k != i) {
+        		    			for(int l=0; l<len; l++) {
+        		    				if(l != j && container[k][j] == container[i][l]) {
+        		    					container[i][j] += container[k][j];
+        		    					container[k][j] = 0;
+        		    					container[k][l] += container[i][l];
+        		    					container[i][l] = 0;
+        		    				}
+        		    			}
+        		    		}
+        		    	}
+        		    	break;
+    		    	}
+    			}
+    		}
+    		
+    		if(i < len && !b) return "Impossible";
+    		
+    		for(int j=0; j<len; j++) {
+    			if(j!=loc && container[i][j] !=0) {
+    				return "Impossible";
     			}
     		}
     	}
+//    	for(int i=0; i<container.length; i++) {
+//    		for(int j=0; j<container[i].length; j++) {
+//    			System.out.print(container[i][j]+" ");
+//    		}
+//    		System.out.println();
+//    	}
     	
-		return result;
+		return "Possible";
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -42,7 +92,7 @@ public class OrganizingContainersOfBalls {
             }
 
             String result = organizingContainers(container);
-
+            System.out.println(result);
         }
 
         scanner.close();
