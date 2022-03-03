@@ -21,6 +21,6 @@ n은 1이상, 50000000000000 이하인 양의 정수입니다.
 
 # 다른 사람 풀이
 1. n ** (1/2) 은 제곱근!!
-2. {code}return n == int(n**.5)**2 and int(n**.5+1)**2 or -1 {code}(한줄코드)
+2. ```return n == int(n**.5)**2 and int(n**.5+1)**2 or -1 ```(한줄코드)
 3. from math import sqrt 라이브러리 함수 사용
 4. pow 내장 함수 사용
