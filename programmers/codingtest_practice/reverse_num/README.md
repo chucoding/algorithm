@@ -26,4 +26,4 @@ def solution(n):
 마지막 클론 뒤에 들어가는 숫자는 step - 점프 투 파이썬 개념에 내용없음
 💡 slicing 방식은 파이썬 내부에서 C로 구현된 구조체여서 속도가 빠름
 ```
-5. reversed 내장함수를 사용하면 리스트를 리턴. ```list.reverse()```는 리턴값 없음
+5. reversed 내장함수를 사용하면 iterator를 리턴(for문에서 사용가능). ```list.reverse()```는 리턴값 없음
