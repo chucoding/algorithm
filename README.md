@@ -158,7 +158,7 @@ for(int i=0; i<genres.length; i++) {
 ```
 
 stack & queue
------
+------
 스택 - ~~Stack 자료구조 이용~~ //Stack은 list의 vector를 상속받기 때문에 성능이 저하됨
    * LinkedList이용해서 직접만들어서 사용 - 효율은 좋으나 코드가 복잡해짐
    * **Deque** 자료구조 이용 - Stack 자료구조보다 빠른 스택 구현 가능, 단 search()메소드 지원안함
