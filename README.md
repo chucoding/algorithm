@@ -9,7 +9,7 @@
 
 print
 ----- 
-[JAVA] System.out.println(문자열)  💡 문자열에 % 쓰고 싶으면 %%로 출력
+[JAVA] System.out.println(문자열)  💡 문자열에 % 쓰고 싶으면 %%로 출력   
 [PYTHON] print(문자열)
  
 string
