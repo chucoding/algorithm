@@ -9,7 +9,7 @@
 
 print
 ----- 
-[JAVA] System.out.println(문자열)  💡 문자열에 % 쓰고 싶으면 %%로 출력
+[JAVA] System.out.println(문자열)  💡 문자열에 % 쓰고 싶으면 %%로 출력   
 [PYTHON] print(문자열)
  
 string
@@ -194,7 +194,7 @@ BFS, DFS - 모든 정점을 방문하는 방법 두가지
 
 <img src="/img/bfsdfs.png" title="bfsdfs" alt="bfsdfs"></img><br/>
 
-1. BFS - 너비 우선 탐색
+1. BFS(Breadth First Search) - 너비 우선 탐색
    * **큐(queue)** 이용
    * 최단 경로 무조건 보장
    * 노드의 수가 많을수록 더 큰 저장공간 필요
@@ -204,7 +204,7 @@ BFS, DFS - 모든 정점을 방문하는 방법 두가지
 		* 링크드 리스트 구현하면 좋은데 매번 구현하기 귀찮은 단점이 있음
 		* C++에서는 vector
 		* java에서는 **ArrayList** 사용
-2. DFS - 깊이 우선 탐색
+2. DFS(Depth First Search) - 깊이 우선 탐색
    * **스택**, 또는 **재귀함수** 이용
    * 백트래킹을 해야하는 노드들만 저장
    * 최단경로 보장X, 깊으면 시간 오래걸림
