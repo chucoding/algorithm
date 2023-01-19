@@ -20,6 +20,16 @@ if __name__ == "__main__":
     kw1 = "Hello"
     some_func(kw1=kw1)
 ```
+
+## 2. Pythonic
+### list comprehension
+Example
+```python
+# [ ( 변수를 활용한 값 ) for ( 사용할 변수 이름 ) in ( 순회할 수 있는 값 )]
+arr = [n for n in range(1, 11) if n % 2 == 0]
+```
+
 ## 참고자료
 https://peps.python.org/pep-0008 <br/>
 https://kimjingo.tistory.com/177 <br/>
+https://shoark7.github.io/programming/python/about-list-comprehension-python 
