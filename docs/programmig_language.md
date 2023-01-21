@@ -1,10 +1,81 @@
 # 📌 자주 헷갈리는 프로그래밍 언어별 문법 비교
 
-|  | JAVA | JAVASCRIPT | PYTHON |
-|--|------|------------|--------|
-| 대소문자 구분 ?<br/>`a = 1`<br/>`A = 2` | `System.out.println(a); //1`<br/>`System.out.println(A); //2` | `console.log(a); //1`<br/>`console.log(A); //2` | `print(a) //1`<br/>`print(A) //2` |
-| 문자열+숫자<br/>`"a"+1=`|`a1`|`a1`|`TypeError: can only concatenate str (not "int") to str` | 
-|증감연산자<br/>`a++`|`1`|`1`|`SyntaxError: invalid syntax`|
-|배열선언| 밀집 배열<br/>`int[] a = {1,2};` | 희소 배열<br/>`a=[1,2]` | 배열 없음 |
-|리스트 합치기|`List<String> joined = new ArrayList<>();`<br/>`joined.addAll(list1);`<br/>`joined.addAll(list2);`|`list1.concat(list2)`<br/>`list1.push(list2)`|`list1+list2`|
-|함수선언| `private int a() {} //메소드` | `function a() {}` | `def a():`|
+<table>
+    <thead>
+        <tr>
+            <th>What is different?</th>
+            <th>JAVA</th>
+            <th>JAVA SCRIPT</th>
+            <th>PYTHON</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>대소문자를 구분할까?<br/><code>x = 1, X = 2</code></td>
+            <td>O</td>
+            <td>0</td>
+            <td>O</td>
+        </tr>
+        <tr>
+            <td>문자열 + 숫자<br/><code>"x"+1=</code></td>
+            <td><code>x1</code></td>
+            <td><code>x1</code></td>
+            <td><code>TypeError: can only concatenate str (not "int") to str</code></td>
+        </tr>
+        <tr>
+            <td>증감연산자<br/><code>x++</code></td>
+            <td>사용가능</td>
+            <td>사용가능</td>
+            <td>사용 불가능<br/><code>SyntaxError: invalid syntax</code></td>
+        </tr>
+        <tr>
+            <td>배열</td>
+            <td>밀집 배열<br/><code>int[] a = {1,2};</code></td>
+            <td>희소 배열<br/><code>a=[1,2]</code></td>
+            <td>배열 개념 없음(리스트만 존재)</td>
+        </tr>
+        <tr>
+            <td>리스트 합치기</td>
+            <td>
+                <pre>
+                    <code>
+                        List<String> joined = new ArrayList<>();
+                        joined.addAll(list1);
+                        joined.addAll(list2);
+                    </code>
+                </pre>
+            </td>
+            <td>
+                <code>list1.concat(list2)</code><br/>
+                <code>list1.push(list2)</code>
+            </td>
+            <td><code>list1+list2</code></td>
+        </tr>
+        <tr>
+            <td>함수</td>
+            <td><code>private int a() {} //자바에선 메소드라고 부른다.</code></td>
+            <td><code>function a() {}</code></td>
+            <td><code>def a():</code></td>
+        </tr>
+        <tr>
+            <td>if-else</td>
+            <td colspan=2><pre><code>
+            if (x < 10) {
+                ...
+            } else if (x > 10) {
+                ...
+            } else {
+                ...
+            }
+            </code></pre></td>
+            <td><pre><code>
+            if x < 10:
+                ...
+            elif x > 10:
+                ...
+            else:
+                ...
+            </code></pre></td>
+        </tr>
+    </tbody>
+</table>
