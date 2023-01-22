@@ -1,13 +1,5 @@
 # 📌 자주 헷갈리는 프로그래밍 언어별 문법 비교
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="/path/to/styles/default.min.css">
-    <script src="/path/to/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-</head>
-<body>
 <table>
     <thead>
         <tr>
@@ -113,7 +105,3 @@
         </tr>
     </tbody>
 </table>
-<script>
-
-</script>
-</body>
