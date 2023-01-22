@@ -77,5 +77,31 @@
                 ...
             </code></pre></td>
         </tr>
+        <tr>
+            <td>삼항 연산자</td>
+            <td colspan=2><pre><code>
+            x == 1 ? x : y
+            </code></pre></td>
+            <td><pre><code>
+            x if x == 1 else y
+            </code></pre></td>
+        </tr>
+        <tr>
+            <td>반복문(loop)</td>
+            <td><pre><code>
+            for (int i=0; i<10; i++)) {
+                ...
+            }
+            </code></pre></td>
+            <td><pre><code>
+            for (i=0; i<10; i++)) {
+                ...
+            }
+            </code></pre></td>
+            <td><pre><code>
+            for i, x in range(0,10) :
+                # 0부터 9까지 
+            </code></pre></td>
+        </tr>
     </tbody>
 </table>
