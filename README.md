@@ -11,6 +11,14 @@
 [📌 파이썬 알고리즘 Tip](./docs/python_tip.md) <br/>
 [📌 자주 쓰이는 정규식 보러가기](./docs/regex.md)
 
+## for vs while
+for &nbsp;&nbsp;&nbsp; : 반복 실행횟수가 명확할때 사용<br/>
+while : 반복 실행횟수가 명확하지 않을때 사용
+
+❗while(true)는 사용하지 말것!<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 프로그램이 언제 종료될지 정확하게 예측하기 어려우므로
+
+
 string
 -----
 * 자바 **문자(char)** 출력은 Scanner 메소드가 따로 없음! next().charAt(0) 이런식으로 출력 가능
