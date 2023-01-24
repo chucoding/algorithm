@@ -11,22 +11,22 @@
     </thead>
     <tbody>
         <tr>
-            <td>대소문자를 구분할까?<br/><code>x = 1, X = 2</code></td>
+            <td>대소문자를 구분할까?<br/></td>
             <td>O</td>
             <td>0</td>
             <td>O</td>
         </tr>
         <tr>
             <td>문자열 + 숫자<br/><code>"x"+1=</code></td>
-            <td><code>x1</code></td>
-            <td><code>x1</code></td>
-            <td><code>TypeError: can only concatenate str (not "int") to str</code></td>
+            <td><pre><code>x1</code></pre></td>
+            <td><pre><code>x1</code></pre></td>
+            <td><pre><code>TypeError: can only concatenate str (not "int") to str</code></pre></td>
         </tr>
         <tr>
             <td>증감연산자<br/><code>x++</code></td>
             <td>사용가능</td>
             <td>사용가능</td>
-            <td>사용 불가능<br/><code>SyntaxError: invalid syntax</code></td>
+            <td>사용 불가능<br/><pre><code>SyntaxError: invalid syntax</code></pre></td>
         </tr>
         <tr>
             <td>배열</td>
@@ -46,16 +46,16 @@
                 </pre>
             </td>
             <td>
-                <code>list1.concat(list2)</code><br/>
-                <code>list1.push(list2)</code>
+                <pre><code>list1.concat(list2)</code></pre><br/>
+                <pre><code>list1.push(list2)</code></pre>
             </td>
-            <td><code>list1+list2</code></td>
+            <td><pre><code>list1+list2</code></pre></td>
         </tr>
         <tr>
             <td>함수</td>
-            <td><code>private int a() {} //자바에선 메소드라고 부른다.</code></td>
-            <td><code>function a() {}</code></td>
-            <td><code>def a():</code></td>
+            <td><pre><code>private int a() {} //자바에선 메소드라고 부른다.</code></pre></td>
+            <td><pre><code>function a() {}</code></pre></td>
+            <td><pre><code>def a():</code></pre></td>
         </tr>
         <tr>
             <td>if-else</td>
