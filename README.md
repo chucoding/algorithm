@@ -6,7 +6,7 @@
 4. for문 안에서 배열이나 저장소 크기 줄이지 말기!(index 달라져서 오류남!!)
 
 ## 목차
-[📌 자주 헷갈리는 프로그래밍 언어별 문법 비교](./docs/programmig_language.md) <br/>
+[📌 자주 헷갈리는 프로그래밍 언어별 문법 비교](./docs/compare_lang.md) <br/>
 [📌 자바 알고리즘 Tip](./docs/java_tip.md) <br/>
 [📌 파이썬 알고리즘 Tip](./docs/python_tip.md) <br/>
 [📌 자주 쓰이는 정규식 보러가기](./docs/regex.md)
