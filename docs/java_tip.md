@@ -66,3 +66,39 @@ System.out.println(문자열);  // 문자열에 % 쓰고 싶으면 %%로 출력
 		* 멀티쓰레드환경에서 synchronized 키워드가 가능하므로 동기화가 가능(thread-safe)
 	* StringBuilder : mutable(가변)
 		* 동기화를 고려하지 않기 때문에 싱글쓰레드 환경에서 연산처리가 빠른 장점이 있음(StringBuffer의 2배 속도 차이!)
+
+* 특정 문자열에서 원하는 문자가 포함되어 있는지
+  1. contains : 문자열에 검색하고자 하는 문자가 있는지 확인 (boolean)
+  2. **indexOf** : 문자열에서 검색하는 문자의 위치를 반환 (int:문자위치)
+  3. matches : 정규식을 이용하여 문자열을 검색 (boolean)
+    * 특정 문자열을 검색할때 사용하기 보다는 한글, 숫자 등과 같이 해당 형태의 텍스트가 존재하는지 확인할때 사용하면 좋다
+  출처: https://fruitdev.tistory.com/72 [과일가게 개발자]
+* 특정 문자열에서 특정 문자 개수 구하기
+  1. indexOf이용(매개변수 : "특정문자", **시작위치**)
+  ```
+    int lineCnt = 0;
+    int fromIndex = -1;
+    while ((fromIndex = cellText.indexOf("특정문자", fromIndex + 1)) >= 0) {
+      lineCnt++;
+    }
+  ```
+  출처: https://goni9071.tistory.com/6 [고니의꿈]  
+  2. **Pattern Matcher** 객체이용 -- 더 빠름
+    * java.util.regex 패키지 
+    * Matcher find 메소드 Pattern에 일치하는 텍스트들이 발견되면 true를 반환해줌
+    * 반복문을 사용하면 두번째, 세번째로 패턴과 일치하는 부분을 찾음
+  ```
+    Pattern pattern = Pattern.compile("정규식");            
+    Matcher matcher = pattern.matcher("문자열");
+    while (matcher.find()) {
+	count++;
+    }
+  ```
+  출처: https://devgwangpal.tistory.com/12 [흔한 코더의 필기장입니다 :)]
+
+* 대문자 <-> 소문자 변환문제
+	```
+		char[] str = br.readLine().toCharArray();
+	```
+	* 다음과 같은 공식으로 배열 만들어서 사용(하나씩 비교해줘야 되므로 StringBuilder X)
+	* 다 끝난다음 출력시 for문 대신 **String.valueOf(str)** 로 String형으로 변환시켜주면 더 빠르게 동작한다.
