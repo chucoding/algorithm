@@ -34,7 +34,6 @@ hash
 	* key를 기준으로 정렬할 수 있도록 해줌(HashMap은 데이터의 정렬이라는게 없기 때문에 이걸사용)
 	* 정렬기준 : 숫자 > 알파벳 대문자 > 알파벳 소문자 > 한글
 	* 기본적인 검색성능은 HashMap이 더 뛰어나나 **범위검색이나 정렬이 필요한 경우는 TreeMap을 사용**하는 것이 좋음
-	
 	```
 		TreeMap<String, String> map = new TreeMap<>();
         	map.put("a", "A");
