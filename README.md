@@ -33,20 +33,19 @@ hash
 	* key를 기준으로 정렬할 수 있도록 해줌(HashMap은 데이터의 정렬이라는게 없기 때문에 이걸사용)
 	* 정렬기준 : 숫자 > 알파벳 대문자 > 알파벳 소문자 > 한글
 	* 기본적인 검색성능은 HashMap이 더 뛰어나나 **범위검색이나 정렬이 필요한 경우는 TreeMap을 사용**하는 것이 좋음
-	```
-		TreeMap<String, String> map = new TreeMap<>();
-        	map.put("a", "A");
-        	map.put("b", "B");
-        	map.put("1", "one");
-        	map.put("2", "two");
-        	map.put("가", "ㄱ");
-        	map.put("나", "ㄴ");
-        	map.put("A", "a");
-        	map.put("B", "b");
+	
+	TreeMap<String, String> map = new TreeMap<>();
+	map.put("a", "A");
+	map.put("b", "B");
+	map.put("1", "one");
+	map.put("2", "two");
+	map.put("가", "ㄱ");
+	map.put("나", "ㄴ");
+	map.put("A", "a");
+	map.put("B", "b");
 
-        	System.out.println("map = " + map);
-		//map = {1=one, 2=two, A=a, B=b, a=A, b=B, 가=ㄱ, 나=ㄴ}
-	```
+	System.out.println("map = " + map);
+	//map = {1=one, 2=two, A=a, B=b, a=A, b=B, 가=ㄱ, 나=ㄴ}
 	
 해쉬 맵 문제풀이 팁
 1. getOrDefault(있으면 반환,없으면 반환) -- key 값 같은거 밸류 개수 구하거나 더할때 유용함
