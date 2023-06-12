@@ -3,10 +3,10 @@
 <table>
     <thead>
         <tr>
-            <th>What is different?</th>
-            <th>JAVA</th>
-            <th>JAVA SCRIPT</th>
-            <th>PYTHON</th>
+            <th width="50px">What is different?</th>
+            <th width="50px">JAVA</th>
+            <th width="50px">JAVA SCRIPT</th>
+            <th width="50px">PYTHON</th>
         </tr>
     </thead>
     <tbody>
